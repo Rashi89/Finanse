@@ -123,6 +123,10 @@ void UsersMenager::wyswietlWszystkichUzytkownikow() {
     }
 }
 
+int UsersMenager::pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
+}
 
 bool UsersMenager::czyIstniejeLogin(string login) {
     //refaktoryzacja kodu

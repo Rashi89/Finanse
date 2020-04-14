@@ -29,6 +29,7 @@ public:
     void logowanieUzytkownika();
     void wylogowanieZalogowanegoUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
+    int pobierzIdZalogowanegoUzytkownika();
 
 
     string wczytajLinie();

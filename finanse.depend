@@ -51,7 +51,7 @@
 	"User.h"
 	"Markup.h"
 
-1586526827 source:d:\programowanie\projekty c++\finanse\main.cpp
+1586854841 source:d:\programowanie\projekty c++\finanse\main.cpp
 	<iostream>
 	<vector>
 	"Markup.h"
@@ -63,7 +63,7 @@
 	<string>
 	<afx.h>
 
-1586525121 d:\programowanie\projekty c++\finanse\usersmenager.h
+1586854405 d:\programowanie\projekty c++\finanse\usersmenager.h
 	<iostream>
 	<vector>
 	"User.h"
@@ -95,7 +95,7 @@
 1586525121 source:d:\programowanie\projekty c++\finanse\user.cpp
 	"User.h"
 
-1586525238 source:d:\programowanie\projekty c++\finanse\usersmenager.cpp
+1586854405 source:d:\programowanie\projekty c++\finanse\usersmenager.cpp
 	<iostream>
 	<vector>
 	"User.h"

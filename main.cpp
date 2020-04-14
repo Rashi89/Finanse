@@ -7,9 +7,9 @@ using namespace std;
 
 int main() {
     UsersMenager usersMenager;
-    usersMenager.rejestracjaUzytkownika();
-    usersMenager.rejestracjaUzytkownika();
-    usersMenager.wyswietlWszystkichUzytkownikow();
+    //usersMenager.rejestracjaUzytkownika();
+    //usersMenager.rejestracjaUzytkownika();
+    //usersMenager.wyswietlWszystkichUzytkownikow();
     //usersMenager.logowanieUzytkownika();
     //usersMenager.wylogowanieZalogowanegoUzytkownika();
     //usersMenager.zmianaHaslaZalogowanegoUzytkownika();
