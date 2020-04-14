@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="xml_lekcja1" />
+		<Option title="finanse" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/xml_lekcja1" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/finanse" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -32,10 +32,16 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Finanse.cpp" />
+		<Unit filename="Finanse.h" />
 		<Unit filename="Income.cpp" />
 		<Unit filename="Income.h" />
+		<Unit filename="IncomeMenager.cpp" />
+		<Unit filename="IncomeMenager.h" />
 		<Unit filename="Markup.cpp" />
 		<Unit filename="Markup.h" />
+		<Unit filename="PlikiZIncomes.cpp" />
+		<Unit filename="PlikiZIncomes.h" />
 		<Unit filename="PlikiZUsers.cpp" />
 		<Unit filename="PlikiZUsers.h" />
 		<Unit filename="User.cpp" />
