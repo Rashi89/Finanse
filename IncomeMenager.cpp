@@ -3,6 +3,7 @@
 
 #include "Income.h"
 #include "IncomeMenager.h"
+#include "DataMenager.h"
 #include "Markup.h"
 
 void IncomeMenager::dodajItem() {
@@ -18,17 +19,20 @@ void IncomeMenager::dodajItem() {
 
 Income IncomeMenager::podajNowyItem() {
     Income income;
+    char znak;
+    int amount;
+    string data1,item;
 
     income.ustawIncomeID(pobierzIdNowegoItemu());
     income.ustawUserID(ID_ZALOGOWANEGO_UZYTKOWNIKA);
-
-    int amount;
-    string data,item;
-
+    cout<<"Czy chcesz dodac nowy produkt z dzisiejsza data? <t/n>"<<endl;
+    cin>>znak;
+    if(znak=='n')
+    {
         cout << "Podaj date: ";
         cin.sync();
-        data=wczytajLinie();
-        income.ustawDate(data);
+        data1=wczytajLinie();
+        income.ustawDate(data1);
         cout << "Podaj nazwe produktu: ";
         cin.sync();
         item=wczytajLinie();
@@ -37,6 +41,21 @@ Income IncomeMenager::podajNowyItem() {
         cin.sync();
         cin>>amount;
         income.ustawAmount(amount);
+    }
+    else{
+        cout<<"Dzisiejsza data: "<<endl;
+        data1=dataMenager.dzisiejszaData();
+        cout<<data1<<endl;
+        income.ustawDate(data1);
+        cout << "Podaj nazwe produktu: ";
+        cin.sync();
+        item=wczytajLinie();
+        income.ustawItem(item);
+        cout << "Podaj kwote: ";
+        cin.sync();
+        cin>>amount;
+        income.ustawAmount(amount);
+    }
 
     return income;
 }

@@ -45,8 +45,8 @@ void PlikiZIncomes::dopiszItemDoPliku(Income income)
         xml.IntoElem();
         xml.AddElem( "INCOME" );
         xml.IntoElem();
-        xml.AddElem( "INCOMEID", income.pobierzIncomeID() );
         xml.AddElem( "USERID", income.pobierzUserID() );
+        xml.AddElem( "INCOMEID", income.pobierzIncomeID() );
         xml.AddElem( "DATE", income.pobierzDate() );
         xml.AddElem( "ITEM", income.pobierzItem() );
         xml.AddElem( "AMOUNT", income.pobierzAmount() );
@@ -58,8 +58,8 @@ void PlikiZIncomes::dopiszItemDoPliku(Income income)
         xml.IntoElem();
         xml.AddElem( "INCOME" );
         xml.IntoElem();
-        xml.AddElem( "INCOMEID", income.pobierzIncomeID() );
         xml.AddElem( "USERID", income.pobierzUserID() );
+        xml.AddElem( "INCOMEID", income.pobierzIncomeID() );
         xml.AddElem( "DATE", income.pobierzDate() );
         xml.AddElem( "ITEM", income.pobierzItem() );
         xml.AddElem( "AMOUNT", income.pobierzAmount() );
