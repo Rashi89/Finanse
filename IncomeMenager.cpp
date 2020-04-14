@@ -48,7 +48,29 @@ int IncomeMenager::pobierzIdNowegoItemu() {
         return incomes.back().pobierzIncomeID() + 1;
 }
 
+void IncomeMenager::wyswietlWszystkieItemy()
+{
+    if (!incomes.empty()) {
+        cout << "             >>>PRODUKTY<<<" << endl;
+        cout << "-----------------------------------------------" << endl;
+        //cout<<incomes.size()<<endl;
+        for (vector <Income> :: iterator itr = incomes.begin(); itr != incomes.end(); itr++) {
+            wyswietlItem(*itr);
+        }
+        cout << endl;
+    } else {
+        cout << endl << "Brak produktow." << endl << endl;
+    }
+}
 
+void IncomeMenager::wyswietlItem(Income income)
+{
+    cout<<"ID uzytkownika: "<< income.pobierzUserID()<<endl;
+    cout<<"ID itemu: "<< income.pobierzIncomeID()<<endl;
+    cout<<"Data: "<< income.pobierzDate()<<endl;
+    cout<<"Nazwa itemu: "<< income.pobierzItem()<<endl;
+    cout<<"Koszt: "<< income.pobierzAmount()<<endl;
+}
 
 
 string IncomeMenager::wczytajLinie() {

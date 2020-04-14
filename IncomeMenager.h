@@ -19,12 +19,14 @@ class IncomeMenager
 
     Income podajNowyItem();
     int pobierzIdNowegoItemu();
+    void wyswietlItem(Income income);
 
 public:
     IncomeMenager(int idZalogowanegoUzytkownika): ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika){
         incomes = plikiZIncomes.wczytajItemyZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
         };
     void dodajItem();
+    void wyswietlWszystkieItemy();
 
 
     string wczytajLinie();
