@@ -5,6 +5,7 @@
 
 #include "User.h"
 #include "PlikiZUsers.h"
+#include "IncomeMenager.h"
 #include "Markup.h"
 
 using namespace std;
@@ -27,8 +28,11 @@ public:
     void rejestracjaUzytkownika();
     void wyswietlWszystkichUzytkownikow();
     void logowanieUzytkownika();
-    void wylogowanieZalogowanegoUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
+    void wylogowanieZalogowanegoUzytkownika();
+    bool czyUzytkownikJestZalogowany();
+    int pobierzIdZalogowanegoUzytkownika();
+
 
 
     string wczytajLinie();

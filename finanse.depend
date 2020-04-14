@@ -51,3 +51,98 @@
 	"User.h"
 	"Markup.h"
 
+1586869761 source:d:\programowanie\projekty c++\finanse\main.cpp
+	<iostream>
+	<vector>
+	"Markup.h"
+	"Finanse.h"
+
+1586181576 d:\programowanie\projekty c++\finanse\markup.h
+	<stdlib.h>
+	<string.h>
+	<string>
+	<afx.h>
+
+1586865641 d:\programowanie\projekty c++\finanse\usersmenager.h
+	<iostream>
+	<vector>
+	"User.h"
+	"PlikiZUsers.h"
+	"IncomeMenager.h"
+	"Markup.h"
+
+1586525121 d:\programowanie\projekty c++\finanse\user.h
+	<iostream>
+
+1586525685 d:\programowanie\projekty c++\finanse\plikizusers.h
+	<iostream>
+	<vector>
+	"User.h"
+	"Markup.h"
+
+1586525121 source:d:\programowanie\projekty c++\finanse\markup.cpp
+	<stdio.h>
+	"Markup.h"
+	<errno.h>
+	<iconv.h>
+	<windows.h>
+	<mbstring.h>
+
+1586525121 source:d:\programowanie\projekty c++\finanse\plikizusers.cpp
+	"Markup.h"
+	"User.h"
+	"PlikiZUsers.h"
+
+1586525121 source:d:\programowanie\projekty c++\finanse\user.cpp
+	"User.h"
+
+1586864188 source:d:\programowanie\projekty c++\finanse\usersmenager.cpp
+	<iostream>
+	<vector>
+	"User.h"
+	"UsersMenager.h"
+	"Markup.h"
+	"PlikiZUsers.h"
+
+1586853362 source:d:\programowanie\projekty c++\finanse\income.cpp
+	"Income.h"
+
+1586853350 d:\programowanie\projekty c++\finanse\income.h
+	<iostream>
+
+1586869717 source:d:\programowanie\projekty c++\finanse\incomemenager.cpp
+	<iostream>
+	<vector>
+	"Income.h"
+	"IncomeMenager.h"
+	"Markup.h"
+
+1586869692 d:\programowanie\projekty c++\finanse\incomemenager.h
+	<iostream>
+	<vector>
+	"Income.h"
+	"IncomeMenager.h"
+	"PlikiZIncomes.h"
+	"Markup.h"
+
+1586869692 d:\programowanie\projekty c++\finanse\finanse.h
+	<iostream>
+	"UsersMenager.h"
+	"IncomeMenager.h"
+
+1586869692 source:d:\programowanie\projekty c++\finanse\finanse.cpp
+	"Finanse.h"
+	"UsersMenager.h"
+	"IncomeMenager.h"
+
+1586868928 d:\programowanie\projekty c++\finanse\plikizincomes.h
+	<iostream>
+	<vector>
+	"Income.h"
+	"Markup.h"
+
+1586868928 source:d:\programowanie\projekty c++\finanse\plikizincomes.cpp
+	"Markup.h"
+	"Income.h"
+	"PlikiZIncomes.h"
+
