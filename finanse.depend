@@ -51,3 +51,61 @@
 	"User.h"
 	"Markup.h"
 
+1586526827 source:d:\programowanie\projekty c++\finanse\main.cpp
+	<iostream>
+	<vector>
+	"Markup.h"
+	"UsersMenager.h"
+
+1586181576 d:\programowanie\projekty c++\finanse\markup.h
+	<stdlib.h>
+	<string.h>
+	<string>
+	<afx.h>
+
+1586525121 d:\programowanie\projekty c++\finanse\usersmenager.h
+	<iostream>
+	<vector>
+	"User.h"
+	"PlikiZUsers.h"
+	"Markup.h"
+
+1586525121 d:\programowanie\projekty c++\finanse\user.h
+	<iostream>
+
+1586525685 d:\programowanie\projekty c++\finanse\plikizusers.h
+	<iostream>
+	<vector>
+	"User.h"
+	"Markup.h"
+
+1586525121 source:d:\programowanie\projekty c++\finanse\markup.cpp
+	<stdio.h>
+	"Markup.h"
+	<errno.h>
+	<iconv.h>
+	<windows.h>
+	<mbstring.h>
+
+1586525121 source:d:\programowanie\projekty c++\finanse\plikizusers.cpp
+	"Markup.h"
+	"User.h"
+	"PlikiZUsers.h"
+
+1586525121 source:d:\programowanie\projekty c++\finanse\user.cpp
+	"User.h"
+
+1586525238 source:d:\programowanie\projekty c++\finanse\usersmenager.cpp
+	<iostream>
+	<vector>
+	"User.h"
+	"UsersMenager.h"
+	"Markup.h"
+	"PlikiZUsers.h"
+
+1586853362 source:d:\programowanie\projekty c++\finanse\income.cpp
+	"Income.h"
+
+1586853350 d:\programowanie\projekty c++\finanse\income.h
+	<iostream>
+
