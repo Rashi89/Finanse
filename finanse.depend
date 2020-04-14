@@ -51,11 +51,11 @@
 	"User.h"
 	"Markup.h"
 
-1586854841 source:d:\programowanie\projekty c++\finanse\main.cpp
+1586866019 source:d:\programowanie\projekty c++\finanse\main.cpp
 	<iostream>
 	<vector>
 	"Markup.h"
-	"UsersMenager.h"
+	"Finanse.h"
 
 1586181576 d:\programowanie\projekty c++\finanse\markup.h
 	<stdlib.h>
@@ -63,11 +63,12 @@
 	<string>
 	<afx.h>
 
-1586854405 d:\programowanie\projekty c++\finanse\usersmenager.h
+1586865641 d:\programowanie\projekty c++\finanse\usersmenager.h
 	<iostream>
 	<vector>
 	"User.h"
 	"PlikiZUsers.h"
+	"IncomeMenager.h"
 	"Markup.h"
 
 1586525121 d:\programowanie\projekty c++\finanse\user.h
@@ -95,7 +96,7 @@
 1586525121 source:d:\programowanie\projekty c++\finanse\user.cpp
 	"User.h"
 
-1586854405 source:d:\programowanie\projekty c++\finanse\usersmenager.cpp
+1586864188 source:d:\programowanie\projekty c++\finanse\usersmenager.cpp
 	<iostream>
 	<vector>
 	"User.h"
@@ -108,4 +109,27 @@
 
 1586853350 d:\programowanie\projekty c++\finanse\income.h
 	<iostream>
+
+1586867941 source:d:\programowanie\projekty c++\finanse\incomemenager.cpp
+	<iostream>
+	<vector>
+	"Income.h"
+	"IncomeMenager.h"
+	"Markup.h"
+
+1586867927 d:\programowanie\projekty c++\finanse\incomemenager.h
+	<iostream>
+	<vector>
+	"Income.h"
+	"IncomeMenager.h"
+
+1586865989 d:\programowanie\projekty c++\finanse\finanse.h
+	<iostream>
+	"UsersMenager.h"
+	"IncomeMenager.h"
+
+1586866011 source:d:\programowanie\projekty c++\finanse\finanse.cpp
+	"Finanse.h"
+	"UsersMenager.h"
+	"IncomeMenager.h"
 

@@ -128,6 +128,16 @@ int UsersMenager::pobierzIdZalogowanegoUzytkownika()
     return idZalogowanegoUzytkownika;
 }
 
+
+bool UsersMenager::czyUzytkownikJestZalogowany()
+{
+    if(idZalogowanegoUzytkownika>0)
+        return true;
+    else
+        return false;
+}
+
+
 bool UsersMenager::czyIstniejeLogin(string login) {
     //refaktoryzacja kodu
     for(int i=0; i<users.size(); i++) {
