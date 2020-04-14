@@ -5,6 +5,8 @@
 
 #include "Income.h"
 #include "IncomeMenager.h"
+#include "PlikiZIncomes.h"
+#include "Markup.h"
 
 using namespace std;
 
@@ -13,19 +15,19 @@ class IncomeMenager
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
 
     vector <Income> incomes;
+    PlikiZIncomes plikiZIncomes;
 
     Income podajNowyItem();
     int pobierzIdNowegoItemu();
 
 public:
     IncomeMenager(int idZalogowanegoUzytkownika): ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika){
-        incomes = wczytajItemyZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+        incomes = plikiZIncomes.wczytajItemyZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
         };
     void dodajItem();
-    void dopiszItemDoPliku(Income income);
-    vector <Income> wczytajItemyZPliku(int idZalogowanegoUzytkownika);
 
-     string wczytajLinie();
+
+    string wczytajLinie();
 
 };
 

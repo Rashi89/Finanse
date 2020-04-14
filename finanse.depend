@@ -110,18 +110,20 @@
 1586853350 d:\programowanie\projekty c++\finanse\income.h
 	<iostream>
 
-1586867941 source:d:\programowanie\projekty c++\finanse\incomemenager.cpp
+1586868928 source:d:\programowanie\projekty c++\finanse\incomemenager.cpp
 	<iostream>
 	<vector>
 	"Income.h"
 	"IncomeMenager.h"
 	"Markup.h"
 
-1586867927 d:\programowanie\projekty c++\finanse\incomemenager.h
+1586868984 d:\programowanie\projekty c++\finanse\incomemenager.h
 	<iostream>
 	<vector>
 	"Income.h"
 	"IncomeMenager.h"
+	"PlikiZIncomes.h"
+	"Markup.h"
 
 1586865989 d:\programowanie\projekty c++\finanse\finanse.h
 	<iostream>
@@ -132,4 +134,15 @@
 	"Finanse.h"
 	"UsersMenager.h"
 	"IncomeMenager.h"
+
+1586868928 d:\programowanie\projekty c++\finanse\plikizincomes.h
+	<iostream>
+	<vector>
+	"Income.h"
+	"Markup.h"
+
+1586868928 source:d:\programowanie\projekty c++\finanse\plikizincomes.cpp
+	"Markup.h"
+	"Income.h"
+	"PlikiZIncomes.h"
 
