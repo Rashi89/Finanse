@@ -1,0 +1,53 @@
+# depslib dependency file v1.0
+1586525121 source:d:\programowanie\xml_teoria\xml_lekcja1\markup.cpp
+	<stdio.h>
+	"Markup.h"
+	<errno.h>
+	<iconv.h>
+	<windows.h>
+	<mbstring.h>
+
+1586181576 d:\programowanie\xml_teoria\xml_lekcja1\markup.h
+	<stdlib.h>
+	<string.h>
+	<string>
+	<afx.h>
+
+1586525121 source:d:\programowanie\xml_teoria\xml_lekcja1\main.cpp
+	<iostream>
+	<vector>
+	"Markup.h"
+	"UsersMenager.h"
+
+1586525238 source:d:\programowanie\xml_teoria\xml_lekcja1\usersmenager.cpp
+	<iostream>
+	<vector>
+	"User.h"
+	"UsersMenager.h"
+	"Markup.h"
+	"PlikiZUsers.h"
+
+1586525121 source:d:\programowanie\xml_teoria\xml_lekcja1\user.cpp
+	"User.h"
+
+1586525121 d:\programowanie\xml_teoria\xml_lekcja1\user.h
+	<iostream>
+
+1586525121 d:\programowanie\xml_teoria\xml_lekcja1\usersmenager.h
+	<iostream>
+	<vector>
+	"User.h"
+	"PlikiZUsers.h"
+	"Markup.h"
+
+1586525121 source:d:\programowanie\xml_teoria\xml_lekcja1\plikizusers.cpp
+	"Markup.h"
+	"User.h"
+	"PlikiZUsers.h"
+
+1586525685 d:\programowanie\xml_teoria\xml_lekcja1\plikizusers.h
+	<iostream>
+	<vector>
+	"User.h"
+	"Markup.h"
+
