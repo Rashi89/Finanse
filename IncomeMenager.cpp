@@ -32,6 +32,8 @@ Income IncomeMenager::podajNowyItem() {
         cout << "Podaj date: ";
         cin.sync();
         data1=wczytajLinie();
+        DataMenager::podajDate(data1);
+        DataMenager::wyswietlDaty();
         income.ustawDate(data1);
         cout << "Podaj nazwe produktu: ";
         cin.sync();
@@ -42,10 +44,11 @@ Income IncomeMenager::podajNowyItem() {
         cin>>amount;
         income.ustawAmount(amount);
     }
-    else{
+    else if(znak=='t')
+    {
         cout<<"Dzisiejsza data: "<<endl;
-        data1=dataMenager.dzisiejszaData();
-        cout<<data1<<endl;
+        data1=DataMenager::dzisiejszaData();
+        //cout<<data1<<endl;
         income.ustawDate(data1);
         cout << "Podaj nazwe produktu: ";
         cin.sync();
@@ -56,6 +59,8 @@ Income IncomeMenager::podajNowyItem() {
         cin>>amount;
         income.ustawAmount(amount);
     }
+    else
+        cout<<"Zly znak"<<endl;
 
     return income;
 }

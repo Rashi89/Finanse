@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="DataMenager.cpp" />
+		<Unit filename="DataMenager.h" />
 		<Unit filename="Finanse.cpp" />
 		<Unit filename="Finanse.h" />
 		<Unit filename="Income.cpp" />
@@ -48,6 +50,8 @@
 		<Unit filename="User.h" />
 		<Unit filename="UsersMenager.cpp" />
 		<Unit filename="UsersMenager.h" />
+		<Unit filename="data.cpp" />
+		<Unit filename="data.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

@@ -11,7 +11,7 @@
 
 using namespace std;
 
-class IncomeMenager
+class IncomeMenager :public DataMenager
 {
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
 

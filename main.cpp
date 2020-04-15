@@ -15,6 +15,7 @@ int main() {
     //finanse.wylogowanieZalogowanegoUzytkownika();
     //finanse.zmianaHaslaZalogowanegoUzytkownika();
     finanse.dodajItem();
+    //finanse.wyswietlWszystkieItemy();
     //DataMenager dataMenager;
     //dataMenager.pobierzDzisiejszaDate();
     //dataMenager.wyswietlDaty();
