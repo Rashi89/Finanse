@@ -2,7 +2,7 @@
 
 #include "UsersMenager.h"
 #include "IncomeMenager.h"
-//#include "DataMenager.h"
+#include "DataMenager.h"
 
 using namespace std;
 
@@ -33,4 +33,6 @@ public:
     void zmianaHaslaZalogowanegoUzytkownika();
     void dodajItem();
     void wyswietlWszystkieItemy();
+    void wyswietlWszystkieDaty();
+    void sortowanie();
 };

@@ -1,6 +1,8 @@
 #include "Markup.h"
 #include "Income.h"
 #include "PlikiZIncomes.h"
+#include "data.h"
+#include "DataMenager.h"
 
 
 vector <Income> PlikiZIncomes::wczytajItemyZPliku(int idZalogowanegoUzytkownika)
@@ -33,6 +35,7 @@ vector <Income> PlikiZIncomes::wczytajItemyZPliku(int idZalogowanegoUzytkownika)
         xml.OutOfElem();
         incomes.push_back(income);
         }
+        else xml.OutOfElem();
     }
     return incomes;
 }

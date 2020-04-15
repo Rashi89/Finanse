@@ -4,19 +4,19 @@
 #include <vector>
 
 #include "Income.h"
-#include "IncomeMenager.h"
 #include "PlikiZIncomes.h"
 #include "DataMenager.h"
 #include "Markup.h"
+#include "data.h"
 
 using namespace std;
 
-class IncomeMenager :public DataMenager
+class IncomeMenager //:public DataMenager
 {
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
 
     vector <Income> incomes;
-    //vector <Data> daty;
+    vector <Data> daty;
     PlikiZIncomes plikiZIncomes;
     DataMenager dataMenager;
 
@@ -27,9 +27,13 @@ class IncomeMenager :public DataMenager
 public:
     IncomeMenager(int idZalogowanegoUzytkownika): ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika){
         incomes = plikiZIncomes.wczytajItemyZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+        daty = dataMenager.wczytajDaty(ID_ZALOGOWANEGO_UZYTKOWNIKA);
         };
     void dodajItem();
     void wyswietlWszystkieItemy();
+    void wyswietlWszystkieDaty();
+    void wyswietlDate(Data data);
+    void sortowanie();
 
 
     string wczytajLinie();

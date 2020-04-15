@@ -1,6 +1,7 @@
 #include "Finanse.h"
 #include "UsersMenager.h"
 #include "IncomeMenager.h"
+#include "DataMenager.h"
 
 void Finanse::rejestracjaUzytkownika()
 {
@@ -18,6 +19,8 @@ void Finanse::logowanieUzytownika()
     if(usersMenager.czyUzytkownikJestZalogowany())
     {
         incomeMenager = new IncomeMenager(usersMenager.pobierzIdZalogowanegoUzytkownika());
+        //dataMenager = new DataMenager(usersMenager.pobierzIdZalogowanegoUzytkownika());
+
     }
 }
 
@@ -49,5 +52,20 @@ void Finanse::wyswietlWszystkieItemy()
     if(usersMenager.czyUzytkownikJestZalogowany())
     {
         incomeMenager->wyswietlWszystkieItemy();
+    }
+}
+
+void Finanse::wyswietlWszystkieDaty()
+{
+    if(usersMenager.czyUzytkownikJestZalogowany())
+    {
+        incomeMenager->wyswietlWszystkieDaty();
+    }
+}
+void Finanse::sortowanie()
+{
+    if(usersMenager.czyUzytkownikJestZalogowany())
+    {
+        incomeMenager->sortowanie();
     }
 }

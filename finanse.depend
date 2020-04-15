@@ -51,7 +51,7 @@
 	"User.h"
 	"Markup.h"
 
-1586946603 source:d:\programowanie\projekty c++\finanse\main.cpp
+1586966319 source:d:\programowanie\projekty c++\finanse\main.cpp
 	<iostream>
 	<vector>
 	"Markup.h"
@@ -64,12 +64,13 @@
 	<string>
 	<afx.h>
 
-1586871481 d:\programowanie\projekty c++\finanse\usersmenager.h
+1586953715 d:\programowanie\projekty c++\finanse\usersmenager.h
 	<iostream>
 	<vector>
 	"User.h"
 	"PlikiZUsers.h"
 	"IncomeMenager.h"
+	"DataMenager.h"
 	"Markup.h"
 
 1586525121 d:\programowanie\projekty c++\finanse\user.h
@@ -111,45 +112,52 @@
 1586871481 d:\programowanie\projekty c++\finanse\income.h
 	<iostream>
 
-1586946826 source:d:\programowanie\projekty c++\finanse\incomemenager.cpp
+1586967331 source:d:\programowanie\projekty c++\finanse\incomemenager.cpp
 	<iostream>
 	<vector>
 	"Income.h"
+	"data.h"
 	"IncomeMenager.h"
 	"DataMenager.h"
 	"Markup.h"
 
-1586944478 d:\programowanie\projekty c++\finanse\incomemenager.h
+1586967093 d:\programowanie\projekty c++\finanse\incomemenager.h
 	<iostream>
 	<vector>
 	"Income.h"
-	"IncomeMenager.h"
 	"PlikiZIncomes.h"
 	"DataMenager.h"
 	"Markup.h"
+	"data.h"
 
-1586878179 d:\programowanie\projekty c++\finanse\finanse.h
+1586962872 d:\programowanie\projekty c++\finanse\finanse.h
 	<iostream>
 	"UsersMenager.h"
 	"IncomeMenager.h"
+	"DataMenager.h"
 
-1586871481 source:d:\programowanie\projekty c++\finanse\finanse.cpp
+1586962872 source:d:\programowanie\projekty c++\finanse\finanse.cpp
 	"Finanse.h"
 	"UsersMenager.h"
 	"IncomeMenager.h"
+	"DataMenager.h"
 
-1586871481 d:\programowanie\projekty c++\finanse\plikizincomes.h
+1586950185 d:\programowanie\projekty c++\finanse\plikizincomes.h
 	<iostream>
 	<vector>
 	"Income.h"
 	"Markup.h"
+	"data.h"
+	"DataMenager.h"
 
-1586883627 source:d:\programowanie\projekty c++\finanse\plikizincomes.cpp
+1586965925 source:d:\programowanie\projekty c++\finanse\plikizincomes.cpp
 	"Markup.h"
 	"Income.h"
 	"PlikiZIncomes.h"
+	"data.h"
+	"DataMenager.h"
 
-1586297427 source:d:\programowanie\projekty c++\finanse\data.cpp
+1586961248 source:d:\programowanie\projekty c++\finanse\data.cpp
 	"Data.h"
 
 1586297393 d:\programowanie\projekty c++\finanse\data.h
@@ -157,7 +165,7 @@
 	<vector>
 	<algorithm>
 
-1586946513 source:d:\programowanie\projekty c++\finanse\datamenager.cpp
+1586967306 source:d:\programowanie\projekty c++\finanse\datamenager.cpp
 	<iostream>
 	<vector>
 	<stdlib.h>
@@ -166,9 +174,11 @@
 	<winbase.h>
 	<windows.h>
 	"DataMenager.h"
+	"IncomeMenager.h"
 	"data.h"
+	"Markup.h"
 
-1586884182 d:\programowanie\projekty c++\finanse\datamenager.h
+1586967306 d:\programowanie\projekty c++\finanse\datamenager.h
 	<iostream>
 	<vector>
 	<sstream>

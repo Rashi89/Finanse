@@ -2,6 +2,7 @@
 #include <vector>
 
 #include "Income.h"
+#include "data.h"
 #include "IncomeMenager.h"
 #include "DataMenager.h"
 #include "Markup.h"
@@ -18,7 +19,9 @@ void IncomeMenager::dodajItem() {
 }
 
 Income IncomeMenager::podajNowyItem() {
+    vector <Data> daty;
     Income income;
+    Data data;
     char znak;
     int amount;
     string data1,item;
@@ -32,23 +35,30 @@ Income IncomeMenager::podajNowyItem() {
         cout << "Podaj date: ";
         cin.sync();
         data1=wczytajLinie();
-        DataMenager::podajDate(data1);
-        DataMenager::wyswietlDaty();
-        income.ustawDate(data1);
-        cout << "Podaj nazwe produktu: ";
-        cin.sync();
-        item=wczytajLinie();
-        income.ustawItem(item);
-        cout << "Podaj kwote: ";
-        cin.sync();
-        cin>>amount;
-        income.ustawAmount(amount);
+        if(dataMenager.podajDate(data1)==true)
+        {
+            income.ustawIncomeID(pobierzIdNowegoItemu());
+            income.ustawUserID(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+            income.ustawDate(data1);
+            cout << "Podaj nazwe produktu: ";
+            cin.sync();
+            item=wczytajLinie();
+            income.ustawItem(item);
+            cout << "Podaj kwote: ";
+            cin.sync();
+            cin>>amount;
+            income.ustawAmount(amount);
+        }
+
+        else cout<<"Zle dane!"<<endl;
     }
     else if(znak=='t')
     {
         cout<<"Dzisiejsza data: "<<endl;
-        data1=DataMenager::dzisiejszaData();
-        //cout<<data1<<endl;
+        data =dataMenager.pobierzDzisiejszaDate();
+
+        data1=data.pobierzDataZMyslnikami();
+        cout<<data1<<endl;
         income.ustawDate(data1);
         cout << "Podaj nazwe produktu: ";
         cin.sync();
@@ -86,6 +96,45 @@ void IncomeMenager::wyswietlWszystkieItemy()
         cout << endl << "Brak produktow." << endl << endl;
     }
 }
+
+void IncomeMenager::wyswietlWszystkieDaty()
+{
+    if (!daty.empty()) {
+        cout << "             >>> DATY <<<" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout<<daty.size()<<endl;
+        for (vector <Data> :: iterator itr = daty.begin(); itr != daty.end(); itr++) {
+            wyswietlDate(*itr);
+        }
+        cout << endl;
+    } else {
+        cout << endl << "Brak dat." << endl << endl;
+    }
+}
+
+void IncomeMenager::wyswietlDate(Data data) {
+    if(data.pobierzMiesiac()<10&&data.pobierzDzien()<10) {
+        cout<<"Nr daty "<<data.pobierzID()<<": "<<data.pobierzRok()<<"-0"<<data.pobierzMiesiac()<<"-0"<<data.pobierzDzien();
+        cout<<" data jako napis: "<<data.pobierzDataZMyslnikami()<<" data jako liczba: "<<data.pobierzDateBezMyslnikow()<<endl;
+    } else if(data.pobierzMiesiac()<10) {
+        cout<<"Nr daty "<<data.pobierzID()<<": "<<data.pobierzRok()<<"-0"<<data.pobierzMiesiac()<<"-"<<data.pobierzDzien();
+        cout<<" data jako napis: "<<data.pobierzDataZMyslnikami()<<" data jako liczba: "<<data.pobierzDateBezMyslnikow()<<endl;
+    } else if(data.pobierzDzien()<10) {
+        cout<<"Nr daty "<<data.pobierzID()<<": "<<data.pobierzRok()<<"-"<<data.pobierzMiesiac()<<"-0"<<data.pobierzDzien();
+        cout<<" data jako napis: "<<data.pobierzDataZMyslnikami()<<" data jako liczba: "<<data.pobierzDateBezMyslnikow()<<endl;
+    } else{
+        cout<<"Nr daty "<<data.pobierzID()<<": "<<data.pobierzRok()<<"-"<<data.pobierzMiesiac()<<"-"<<data.pobierzDzien();
+        cout<<" data jako napis: "<<data.pobierzDataZMyslnikami()<<" data jako liczba: "<<data.pobierzDateBezMyslnikow()<<endl;
+    }
+}
+
+void IncomeMenager::sortowanie()
+{
+    //vector <Data> daty;
+    dataMenager.sortowanie(daty);
+   //sort(daty.begin(),daty.end());
+}
+
 
 void IncomeMenager::wyswietlItem(Income income)
 {

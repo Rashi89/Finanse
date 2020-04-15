@@ -14,12 +14,15 @@ int main() {
     //finanse.wyswietlWszystkieItemy();
     //finanse.wylogowanieZalogowanegoUzytkownika();
     //finanse.zmianaHaslaZalogowanegoUzytkownika();
-    finanse.dodajItem();
+    //finanse.dodajItem();
     //finanse.wyswietlWszystkieItemy();
     //DataMenager dataMenager;
+    //dataMenager.wczytajDatyZPliku();
     //dataMenager.pobierzDzisiejszaDate();
     //dataMenager.wyswietlDaty();
     //dataMenager.dzisiejszaData();
+    finanse.sortowanie();
+    finanse.wyswietlWszystkieDaty();
 
 
 
