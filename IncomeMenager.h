@@ -2,6 +2,7 @@
 #define INCOMEMENAGER_H
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 #include "Income.h"
 #include "PlikiZIncomes.h"
@@ -23,6 +24,7 @@ class IncomeMenager //:public DataMenager
     Income podajNowyItem();
     int pobierzIdNowegoItemu();
     void wyswietlItem(Income income);
+    int konwersjaStringNaInt(string liczba);
 
 public:
     IncomeMenager(int idZalogowanegoUzytkownika): ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika){
@@ -34,6 +36,7 @@ public:
     void wyswietlWszystkieDaty();
     void wyswietlDate(Data data);
     void sortowanie();
+    void sortowanieItemow(vector <Income> &incomes);
 
 
     string wczytajLinie();

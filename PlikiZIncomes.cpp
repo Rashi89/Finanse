@@ -10,6 +10,9 @@ vector <Income> PlikiZIncomes::wczytajItemyZPliku(int idZalogowanegoUzytkownika)
     vector <Income> incomes;
     Income income;
 
+    string dataJakoString;
+    int dataJakoInt;
+
     CMarkup xml;
     xml.Load( "Income.xml" );
     xml.FindElem("INCOMES"); // root ORDER element
@@ -26,6 +29,9 @@ vector <Income> PlikiZIncomes::wczytajItemyZPliku(int idZalogowanegoUzytkownika)
         xml.FindElem("DATE");
         MCD_STR strDate = xml.GetData();
         income.ustawDate(strDate);
+        dataJakoString=dataMenager.zamienDateNaNapisBezMyslnikow(strDate);
+        dataJakoInt=konwersjaStringNaInt(dataJakoString);
+        income.ustawDataJakoInt(dataJakoInt);
         xml.FindElem("ITEM");
         MCD_STR strItem = xml.GetData();
         income.ustawItem(strItem);
@@ -71,3 +77,10 @@ void PlikiZIncomes::dopiszItemDoPliku(Income income)
     }
 }
 
+int PlikiZIncomes::konwersjaStringNaInt(string liczba)
+{
+    int liczbaInt;
+    istringstream iss(liczba);
+    iss >> liczbaInt;
+    return liczbaInt;
+}

@@ -9,6 +9,7 @@
 #include "DataMenager.h"
 #include "IncomeMenager.h"
 #include "data.h"
+#include "Income.h"
 #include "Markup.h"
 
 bool DataMenager::podajDate(string wpisanaData) {
@@ -257,9 +258,6 @@ vector <Data> DataMenager::wczytajDaty(int idZalogowanegoUzytkownika)
 }
 
 
-
-
-
 int DataMenager::konwersjaStringNaInt(string liczba)
 {
     int liczbaInt;
@@ -275,7 +273,9 @@ string DataMenager::konwersjaIntNaString(int liczba)
     string str = ss.str();
     return str;
 }
+
 void DataMenager::sortowanie(vector <Data> &daty)
 {
-    sort(daty.begin(),daty.end());
+
+    //sort(daty.begin(),daty.end());
 }

@@ -6,6 +6,7 @@
 #include <algorithm>
 
 #include "data.h"
+#include "Income.h"
 //#include "IncomeMenager.h"
 
 
@@ -24,7 +25,7 @@ class DataMenager
     int zamienDateNaDzien(string wpisanaData);
     int konwersjaStringNaInt(string liczba);
     string konwersjaIntNaString(int liczba);
-    string zamienDateNaNapisBezMyslnikow(string wpisanaData);
+    //string zamienDateNaNapisBezMyslnikow(string wpisanaData);
 
 public:
     DataMenager(){
@@ -37,6 +38,7 @@ public:
     Data pobierzDzisiejszaDate();
     string dzisiejszaData();
     string pobierzDzisiejszaDateJakoString(Data data);
+    string zamienDateNaNapisBezMyslnikow(string wpisanaData);
 
 
 

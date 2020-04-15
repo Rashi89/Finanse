@@ -14,8 +14,6 @@ void IncomeMenager::dodajItem() {
     income=podajNowyItem();
     incomes.push_back(income);
     plikiZIncomes.dopiszItemDoPliku(income);
-
-    //plikiZUsers.dopiszUzytkownikaDoPliku(user);
 }
 
 Income IncomeMenager::podajNowyItem() {
@@ -23,8 +21,8 @@ Income IncomeMenager::podajNowyItem() {
     Income income;
     Data data;
     char znak;
-    int amount;
-    string data1,item;
+    int amount,dataJakoInt;
+    string data1,item,dataJakoString;
 
     income.ustawIncomeID(pobierzIdNowegoItemu());
     income.ustawUserID(ID_ZALOGOWANEGO_UZYTKOWNIKA);
@@ -40,6 +38,9 @@ Income IncomeMenager::podajNowyItem() {
             income.ustawIncomeID(pobierzIdNowegoItemu());
             income.ustawUserID(ID_ZALOGOWANEGO_UZYTKOWNIKA);
             income.ustawDate(data1);
+            dataJakoString=dataMenager.zamienDateNaNapisBezMyslnikow(data1);
+            dataJakoInt=konwersjaStringNaInt(dataJakoString);
+            income.ustawDataJakoInt(dataJakoInt);
             cout << "Podaj nazwe produktu: ";
             cin.sync();
             item=wczytajLinie();
@@ -60,6 +61,10 @@ Income IncomeMenager::podajNowyItem() {
         data1=data.pobierzDataZMyslnikami();
         cout<<data1<<endl;
         income.ustawDate(data1);
+        dataJakoString=dataMenager.zamienDateNaNapisBezMyslnikow(data1);
+        dataJakoInt=konwersjaStringNaInt(dataJakoString);
+        cout<<dataJakoInt<<endl;
+        //income.ustawDataJakoInt(dataJakoInt);
         cout << "Podaj nazwe produktu: ";
         cin.sync();
         item=wczytajLinie();
@@ -131,10 +136,16 @@ void IncomeMenager::wyswietlDate(Data data) {
 void IncomeMenager::sortowanie()
 {
     //vector <Data> daty;
-    dataMenager.sortowanie(daty);
+    sortowanieItemow(incomes);
+    //dataMenager.sortowanie(daty);
    //sort(daty.begin(),daty.end());
 }
 
+void IncomeMenager::sortowanieItemow(vector <Income> &incomes)
+{
+    sort(incomes.begin(),incomes.end());
+
+}
 
 void IncomeMenager::wyswietlItem(Income income)
 {
@@ -152,4 +163,12 @@ string IncomeMenager::wczytajLinie() {
     //cin.ignore();
     //cin.get();
     return wejscie;
+}
+
+int IncomeMenager::konwersjaStringNaInt(string liczba)
+{
+    int liczbaInt;
+    istringstream iss(liczba);
+    iss >> liczbaInt;
+    return liczbaInt;
 }

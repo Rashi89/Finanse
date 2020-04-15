@@ -12,6 +12,8 @@ using namespace std;
 
 class PlikiZIncomes
 {
+    DataMenager dataMenager;
+    int konwersjaStringNaInt(string liczba);
 public:
     vector <Income> wczytajItemyZPliku(int idZalogowanegoUzytkownika);
     vector <Data> wczytajDatyZPliku(int idZalogowanegoUzytkownika);
