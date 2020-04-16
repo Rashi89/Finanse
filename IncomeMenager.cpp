@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <windows.h>
+#include <winbase.h>
 
 #include "Income.h"
 #include "data.h"
@@ -154,6 +156,194 @@ void IncomeMenager::wyswietlItem(Income income)
     cout<<"Data: "<< income.pobierzDate()<<endl;
     cout<<"Nazwa itemu: "<< income.pobierzItem()<<endl;
     cout<<"Koszt: "<< income.pobierzAmount()<<endl;
+}
+
+void IncomeMenager::wyswietlItemyZBiezacegoMiesiaca()
+{
+     if (!incomes.empty()) {
+        cout << "             >>>PRODUKTY<<<" << endl;
+        cout << "-----------------------------------------------" << endl;
+        //cout<<incomes.size()<<endl;
+        for (vector <Income> :: iterator itr = incomes.begin(); itr != incomes.end(); itr++) {
+            wyswietlItemZTegoMiesiaca(*itr);
+        }
+        cout << endl;
+    } else {
+        cout << endl << "Brak produktow." << endl << endl;
+    }
+}
+int IncomeMenager::pobierzbiezacyMiesiac()
+{
+    SYSTEMTIME st;
+    GetSystemTime(&st);
+    return st.wMonth;
+}
+void IncomeMenager::wyswietlItemZTegoMiesiaca(Income income)
+{
+    int podanyMiesiac=pobierzbiezacyMiesiac();
+    int dzien=income.pobierzDataJakoInt()%100;
+    int miesiac=(income.pobierzDataJakoInt()%10000-dzien)/100;
+    if(miesiac==podanyMiesiac){
+    cout<<"ID uzytkownika: "<< income.pobierzUserID()<<endl;
+    cout<<"ID itemu: "<< income.pobierzIncomeID()<<endl;
+    cout<<"Data: "<< income.pobierzDate()<<endl;
+    cout<<"Nazwa itemu: "<< income.pobierzItem()<<endl;
+    cout<<"Koszt: "<< income.pobierzAmount()<<endl;
+    }
+}
+
+void IncomeMenager::obliczWydatkiZObecnegoMiesiaca()
+{
+    int podanyMiesiac=pobierzbiezacyMiesiac();
+    int sumaWydatkow=0;
+    if (!incomes.empty()) {
+        for (vector <Income> :: iterator itr = incomes.begin(); itr != incomes.end(); itr++) {
+            int dzien=itr->pobierzDataJakoInt()%100;
+            int miesiac=(itr->pobierzDataJakoInt()%10000-dzien)/100;
+            if(miesiac==podanyMiesiac){
+                sumaWydatkow+=itr->pobierzAmount();
+            }
+        }
+        cout<<sumaWydatkow<<endl;
+        cout << endl;
+    } else {
+        cout << endl << "Brak produktow." << endl << endl;
+    }
+}
+
+void IncomeMenager::wyswietlItemyZPoprzedniegoMiesiaca()
+{
+     if (!incomes.empty()) {
+        cout << "             >>>PRODUKTY<<<" << endl;
+        cout << "-----------------------------------------------" << endl;
+        //cout<<incomes.size()<<endl;
+        for (vector <Income> :: iterator itr = incomes.begin(); itr != incomes.end(); itr++) {
+            wyswietlItemZPoprzedniegoMiesiaca(*itr);
+        }
+        cout << endl;
+    } else {
+        cout << endl << "Brak produktow." << endl << endl;
+    }
+}
+
+void IncomeMenager::wyswietlItemZPoprzedniegoMiesiaca(Income income)
+{
+    int podanyMiesiac=pobierzbiezacyMiesiac()-1;
+    int dzien=income.pobierzDataJakoInt()%100;
+    int miesiac=(income.pobierzDataJakoInt()%10000-dzien)/100;
+    if(miesiac==podanyMiesiac){
+    cout<<"ID uzytkownika: "<< income.pobierzUserID()<<endl;
+    cout<<"ID itemu: "<< income.pobierzIncomeID()<<endl;
+    cout<<"Data: "<< income.pobierzDate()<<endl;
+    cout<<"Nazwa itemu: "<< income.pobierzItem()<<endl;
+    cout<<"Koszt: "<< income.pobierzAmount()<<endl;
+    }
+}
+
+void IncomeMenager::obliczWydatkiZPoprzedniegoMiesiaca()
+{
+    int podanyMiesiac=pobierzbiezacyMiesiac()-1;
+    int sumaWydatkow=0;
+    if (!incomes.empty()) {
+        for (vector <Income> :: iterator itr = incomes.begin(); itr != incomes.end(); itr++) {
+            int dzien=itr->pobierzDataJakoInt()%100;
+            int miesiac=(itr->pobierzDataJakoInt()%10000-dzien)/100;
+            if(miesiac==podanyMiesiac){
+                sumaWydatkow+=itr->pobierzAmount();
+            }
+        }
+        cout<<sumaWydatkow<<endl;
+        cout << endl;
+    } else {
+        cout << endl << "Brak produktow." << endl << endl;
+    }
+}
+bool IncomeMenager::czyWpisanaDataJestPoprawna(string data)
+{
+    int rok=dataMenager.zamienDateNaRok(data);
+    int miesiac=dataMenager.zamienDateNaMiesiac(data);
+    int dzien=dataMenager.zamienDateNaDzien(data);
+
+    if(dataMenager.czyDataJestPoprawna(rok, miesiac, dzien)==true)
+        return true;
+    else return false;
+}
+void IncomeMenager::wyznaczZakresBilansu()
+{
+    string dataPoczatkowa;
+    string dataKoncowa;
+    cout<<"Podaj date poczatkowa: ";
+    cin>>dataPoczatkowa;
+    cout<<"Podaj date koncowa: ";
+    cin>>dataKoncowa;
+    int rokDatyPoczatkowej=0;
+    int miesiacDatyPoczatkowej=0;
+    int dzienDatyPoczatkowej=0;
+    int rokDatyKoncowej=0;
+    int miesiacDatyKoncowej=0;
+    int dzienDatyKoncowej=0;
+
+
+    if(czyWpisanaDataJestPoprawna(dataPoczatkowa)==true){
+        rokDatyPoczatkowej=dataMenager.zamienDateNaRok(dataPoczatkowa);
+        miesiacDatyPoczatkowej=dataMenager.zamienDateNaMiesiac(dataPoczatkowa);
+        dzienDatyPoczatkowej=dataMenager.zamienDateNaDzien(dataPoczatkowa);
+
+        cout<<rokDatyPoczatkowej<<" "<<miesiacDatyPoczatkowej<<" "<<dzienDatyPoczatkowej<<endl;
+    }
+    else cout<<"Bledna data poczatkowa!"<<endl;
+
+    if(czyWpisanaDataJestPoprawna(dataKoncowa)==true){
+        rokDatyKoncowej=dataMenager.zamienDateNaRok(dataKoncowa);
+        miesiacDatyKoncowej=dataMenager.zamienDateNaMiesiac(dataKoncowa);
+        dzienDatyKoncowej=dataMenager.zamienDateNaDzien(dataKoncowa);
+
+        cout<<rokDatyKoncowej<<" "<<miesiacDatyKoncowej<<" "<<dzienDatyKoncowej<<endl;
+    }
+     else cout<<"Bledna data koncowa!"<<endl;
+
+     if(rokDatyPoczatkowej<rokDatyKoncowej){
+     wyswietlItemyZZakresu(rokDatyPoczatkowej,miesiacDatyPoczatkowej,dzienDatyPoczatkowej,rokDatyKoncowej,miesiacDatyKoncowej,dzienDatyKoncowej);
+     }
+     else if(rokDatyPoczatkowej==rokDatyKoncowej)
+     {
+         if(miesiacDatyPoczatkowej<miesiacDatyKoncowej)
+         {
+            wyswietlItemyZZakresu(rokDatyPoczatkowej,miesiacDatyPoczatkowej,dzienDatyPoczatkowej,rokDatyKoncowej,miesiacDatyKoncowej,dzienDatyKoncowej);
+         }
+         else if(miesiacDatyPoczatkowej==miesiacDatyKoncowej)
+         {
+             if(dzienDatyPoczatkowej<dzienDatyKoncowej)
+             {
+                wyswietlItemyZZakresu(rokDatyPoczatkowej,miesiacDatyPoczatkowej,dzienDatyPoczatkowej,rokDatyKoncowej,miesiacDatyKoncowej,dzienDatyKoncowej);
+             }
+             else if(dzienDatyPoczatkowej==dzienDatyKoncowej)
+             {
+                wyswietlItemyZZakresu(rokDatyPoczatkowej,miesiacDatyPoczatkowej,dzienDatyPoczatkowej,rokDatyKoncowej,miesiacDatyKoncowej,dzienDatyKoncowej);
+             }
+             else if(dzienDatyPoczatkowej>dzienDatyKoncowej) cout<<"Data koncowa nie moze byc wczesniej niz poczatkowa"<<endl;
+         }
+         else if(miesiacDatyPoczatkowej>miesiacDatyKoncowej) cout<<"Data koncowa nie moze byc wczesniej niz poczatkowa"<<endl;
+     }
+     else if(rokDatyPoczatkowej>rokDatyKoncowej) cout<<"Data koncowa nie moze byc wczesniej niz poczatkowa"<<endl;
+
+
+}
+
+void IncomeMenager::wyswietlItemyZZakresu(int rokDatyPoczatkowej,int miesiacDatyPoczatkowej,int dzienDatyPoczatkowej,int rokDatyKoncowej,int miesiacDatyKoncowej,int dzienDatyKoncowej)
+{
+    cout<<miesiacDatyPoczatkowej<<endl;
+     /*if (!incomes.empty()) {
+        cout << "             >>>PRODUKTY<<<" << endl;
+        cout << "-----------------------------------------------" << endl;
+        //cout<<incomes.size()<<endl;
+        for (vector <Income> :: iterator itr = incomes.begin(); itr != incomes.end(); itr++) {
+            wyswietlItemZPoprzedniegoMiesiaca(*itr);
+        }
+        cout << endl;
+    } else {
+        cout << endl << "Brak produktow." << endl << endl;
+    }*/
 }
 
 

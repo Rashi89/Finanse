@@ -25,6 +25,11 @@ class IncomeMenager //:public DataMenager
     int pobierzIdNowegoItemu();
     void wyswietlItem(Income income);
     int konwersjaStringNaInt(string liczba);
+    void wyswietlItemZTegoMiesiaca(Income income);
+    void wyswietlItemZPoprzedniegoMiesiaca(Income income);
+    int pobierzbiezacyMiesiac();
+    void sortowanieItemow(vector <Income> &incomes);
+    bool czyWpisanaDataJestPoprawna(string data);
 
 public:
     IncomeMenager(int idZalogowanegoUzytkownika): ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika){
@@ -34,9 +39,14 @@ public:
     void dodajItem();
     void wyswietlWszystkieItemy();
     void wyswietlWszystkieDaty();
+    void wyswietlItemyZBiezacegoMiesiaca();
+    void wyswietlItemyZPoprzedniegoMiesiaca();
     void wyswietlDate(Data data);
     void sortowanie();
-    void sortowanieItemow(vector <Income> &incomes);
+    void obliczWydatkiZObecnegoMiesiaca();
+    void obliczWydatkiZPoprzedniegoMiesiaca();
+    void wyznaczZakresBilansu();
+    void wyswietlItemyZZakresu(int rokDatyPoczatkowej,int miesiacDatyPoczatkowej,int dzienDatyPoczatkowej,int rokDatyKoncowej,int miesiacDatyKoncowej,int dzienDatyKoncowej);
 
 
     string wczytajLinie();

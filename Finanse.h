@@ -34,5 +34,10 @@ public:
     void dodajItem();
     void wyswietlWszystkieItemy();
     void wyswietlWszystkieDaty();
+    void wyswietlItemyZTegoMiesiaca();
+    void wyswietlItemyZPoprzedniegoMiesiaca();
+    void obliczWydatkiZObecnegoMiesiaca();
+    void obliczWydatkiZPoprzedniegoMiesiaca();
+    void wyznaczZakresBilansu();
     void sortowanie();
 };

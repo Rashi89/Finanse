@@ -54,6 +54,43 @@ void Finanse::wyswietlWszystkieItemy()
         incomeMenager->wyswietlWszystkieItemy();
     }
 }
+ void Finanse::wyswietlItemyZTegoMiesiaca()
+ {
+     if(usersMenager.czyUzytkownikJestZalogowany())
+    {
+        incomeMenager->wyswietlItemyZBiezacegoMiesiaca();
+    }
+ }
+  void Finanse::wyswietlItemyZPoprzedniegoMiesiaca()
+ {
+     if(usersMenager.czyUzytkownikJestZalogowany())
+    {
+        incomeMenager->wyswietlItemyZPoprzedniegoMiesiaca();
+    }
+ }
+
+ void Finanse::obliczWydatkiZObecnegoMiesiaca()
+ {
+     if(usersMenager.czyUzytkownikJestZalogowany())
+    {
+        incomeMenager->obliczWydatkiZObecnegoMiesiaca();
+    }
+ }
+ void Finanse::obliczWydatkiZPoprzedniegoMiesiaca()
+ {
+     if(usersMenager.czyUzytkownikJestZalogowany())
+    {
+        incomeMenager->obliczWydatkiZPoprzedniegoMiesiaca();
+    }
+ }
+
+  void Finanse::wyznaczZakresBilansu()
+ {
+     if(usersMenager.czyUzytkownikJestZalogowany())
+    {
+        incomeMenager->wyznaczZakresBilansu();
+    }
+ }
 
 void Finanse::wyswietlWszystkieDaty()
 {

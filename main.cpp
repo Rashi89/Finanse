@@ -3,6 +3,7 @@
 #include "Markup.h"
 #include "Finanse.h"
 #include "DataMenager.h"
+#include "IncomeMenager.h"
 
 using namespace std;
 
@@ -15,8 +16,12 @@ int main() {
     //finanse.wylogowanieZalogowanegoUzytkownika();
     //finanse.zmianaHaslaZalogowanegoUzytkownika();
     //finanse.dodajItem();
-    finanse.sortowanie();
-    finanse.wyswietlWszystkieItemy();
+    //finanse.sortowanie();
+    //finanse.wyswietlWszystkieItemy();
+    //finanse.wyswietlItemyZTegoMiesiaca();
+    //finanse.wyswietlItemyZPoprzedniegoMiesiaca();
+    //finanse.obliczWydatkiZObecnegoMiesiaca();
+    //finanse.obliczWydatkiZPoprzedniegoMiesiaca();
     //DataMenager dataMenager;
     //dataMenager.wczytajDatyZPliku();
     //dataMenager.pobierzDzisiejszaDate();
@@ -24,6 +29,7 @@ int main() {
     //dataMenager.dzisiejszaData();
     //finanse.sortowanie();
     //finanse.wyswietlWszystkieDaty();
+    finanse.wyznaczZakresBilansu();
 
 
 

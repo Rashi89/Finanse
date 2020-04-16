@@ -17,12 +17,10 @@ class DataMenager
 {
     //vector <Data> daty;
     bool czyRokJestPrzestepny(int rok);
-    bool czyDataJestPoprawna(int rok, int miesiac, int dzien);
-    int zamienDateNaMiesiac(string wpisanaData);
-    int pobierzIDNowejDaty();
-    int zamienDateNaRok(string wpisanaData);
 
-    int zamienDateNaDzien(string wpisanaData);
+
+    int pobierzIDNowejDaty();
+
     int konwersjaStringNaInt(string liczba);
     string konwersjaIntNaString(int liczba);
     //string zamienDateNaNapisBezMyslnikow(string wpisanaData);
@@ -39,6 +37,10 @@ public:
     string dzisiejszaData();
     string pobierzDzisiejszaDateJakoString(Data data);
     string zamienDateNaNapisBezMyslnikow(string wpisanaData);
+    int zamienDateNaRok(string wpisanaData);
+    int zamienDateNaDzien(string wpisanaData);
+    int zamienDateNaMiesiac(string wpisanaData);
+    bool czyDataJestPoprawna(int rok, int miesiac, int dzien);
 
 
 
