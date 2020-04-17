@@ -1,79 +1,79 @@
 #include "Markup.h"
-#include "Income.h"
+#include "Expense.h"
 #include "PlikiZIncomes.h"
 #include "data.h"
 #include "DataMenager.h"
 
 
-vector <Income> PlikiZIncomes::wczytajItemyZPliku(int idZalogowanegoUzytkownika)
+vector <Expense> PlikiZIncomes::wczytajItemyZPliku(int idZalogowanegoUzytkownika)
 {
-    vector <Income> incomes;
-    Income income;
+    vector <Expense> expenses;
+    Expense expense;
 
     string dataJakoString;
     int dataJakoInt;
 
     CMarkup xml;
-    xml.Load( "Income.xml" );
-    xml.FindElem("INCOMES"); // root ORDER element
+    xml.Load( "Expense.xml" );
+    xml.FindElem("EXPENSES"); // root ORDER element
     xml.IntoElem(); // inside ORDER
-    while ( xml.FindElem("INCOME") ) {
+    while ( xml.FindElem("EXPENSE") ) {
         xml.IntoElem();
         xml.FindElem( "USERID" );
         int nUserID =atoi( MCD_2PCSZ(xml.GetData()) );
         if(nUserID==idZalogowanegoUzytkownika){
-        income.ustawUserID(nUserID);
-        xml.FindElem( "INCOMEID" );
-        int nIncomeID =atoi( MCD_2PCSZ(xml.GetData()) );
-        income.ustawIncomeID(nIncomeID);
+        expense.ustawUserID(nUserID);
+        xml.FindElem( "EXPENSEID" );
+        int nExpenseID =atoi( MCD_2PCSZ(xml.GetData()) );
+        expense.ustawExpenseID(nExpenseID);
         xml.FindElem("DATE");
         MCD_STR strDate = xml.GetData();
-        income.ustawDate(strDate);
+        expense.ustawDate(strDate);
         dataJakoString=dataMenager.zamienDateNaNapisBezMyslnikow(strDate);
         dataJakoInt=konwersjaStringNaInt(dataJakoString);
-        income.ustawDataJakoInt(dataJakoInt);
+        expense.ustawDataJakoInt(dataJakoInt);
         xml.FindElem("ITEM");
         MCD_STR strItem = xml.GetData();
-        income.ustawItem(strItem);
+        expense.ustawItem(strItem);
         xml.FindElem( "AMOUNT" );
         int nAmount =atoi( MCD_2PCSZ(xml.GetData()) );
-        income.ustawAmount(nAmount);
+        expense.ustawAmount(nAmount);
         xml.OutOfElem();
-        incomes.push_back(income);
+        expenses.push_back(expense);
         }
         else xml.OutOfElem();
     }
-    return incomes;
+    return expenses;
 }
 
-void PlikiZIncomes::dopiszItemDoPliku(Income income)
+void PlikiZIncomes::dopiszItemDoPliku(Expense expense)
 {
     CMarkup xml;
-    if(xml.Load( "Income.xml" )==false) {
-        xml.AddElem( "INCOMES" );
+    if(xml.Load( "Expense.xml" )==false) {
+        xml.AddElem( "EXPENSES" );
         xml.IntoElem();
-        xml.AddElem( "INCOME" );
+        xml.AddElem( "EXPENSE" );
         xml.IntoElem();
-        xml.AddElem( "USERID", income.pobierzUserID() );
-        xml.AddElem( "INCOMEID", income.pobierzIncomeID() );
-        xml.AddElem( "DATE", income.pobierzDate() );
-        xml.AddElem( "ITEM", income.pobierzItem() );
-        xml.AddElem( "AMOUNT", income.pobierzAmount() );
+        xml.AddElem( "USERID", expense.pobierzUserID() );
+        xml.AddElem( "EXPENSEID", expense.pobierzExpenseID() );
+        xml.AddElem( "DATE", expense.pobierzDate() );
+        xml.AddElem( "ITEM", expense.pobierzItem() );
+        xml.AddElem( "AMOUNT", expense.pobierzAmount() );
 
         xml.OutOfElem();
-        xml.Save( "Income.xml" );
+        xml.Save( "Expense.xml" );
     } else {
         xml.FindElem();
         xml.IntoElem();
-        xml.AddElem( "INCOME" );
+        xml.AddElem( "EXPENSE" );
         xml.IntoElem();
-        xml.AddElem( "USERID", income.pobierzUserID() );
-        xml.AddElem( "INCOMEID", income.pobierzIncomeID() );
-        xml.AddElem( "DATE", income.pobierzDate() );
-        xml.AddElem( "ITEM", income.pobierzItem() );
-        xml.AddElem( "AMOUNT", income.pobierzAmount() );
+        xml.AddElem( "USERID", expense.pobierzUserID() );
+        xml.AddElem( "EXPENSEID", expense.pobierzExpenseID() );
+        xml.AddElem( "DATE", expense.pobierzDate() );
+        xml.AddElem( "ITEM", expense.pobierzItem() );
+        xml.AddElem( "AMOUNT", expense.pobierzAmount() );
         xml.OutOfElem();
-        xml.Save( "Income.xml" );
+        xml.Save( "Expense.xml" );
     }
 }
 

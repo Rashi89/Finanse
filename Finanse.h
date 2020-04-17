@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "UsersMenager.h"
-#include "IncomeMenager.h"
+#include "ExpenseMenager.h"
 #include "DataMenager.h"
 
 using namespace std;
@@ -9,19 +9,19 @@ using namespace std;
 class Finanse
 {
     UsersMenager usersMenager;
-    IncomeMenager *incomeMenager;
+    ExpenseMenager *expenseMenager;
     //DataMenager *dataMenager;
 
 public:
     Finanse()
     {
-        incomeMenager=NULL;
+        expenseMenager=NULL;
         //dataMenager=NULL;
     }
     ~Finanse()
     {
-        delete incomeMenager;
-        incomeMenager=NULL;
+        delete expenseMenager;
+        expenseMenager=NULL;
         //delete dataMenager;
         //dataMenager=NULL;
 
@@ -38,6 +38,6 @@ public:
     void wyswietlItemyZPoprzedniegoMiesiaca();
     void obliczWydatkiZObecnegoMiesiaca();
     void obliczWydatkiZPoprzedniegoMiesiaca();
-    void wyznaczZakresBilansu();
+    void wyswietlItemyZPodanegoZakresu();
     void sortowanie();
 };

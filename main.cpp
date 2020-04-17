@@ -3,35 +3,24 @@
 #include "Markup.h"
 #include "Finanse.h"
 #include "DataMenager.h"
-#include "IncomeMenager.h"
+#include "ExpenseMenager.h"
 
 using namespace std;
 
 int main() {
     Finanse finanse;
-    //finanse.rejestracjaUzytkownika();
-    //finanse.wyswietlWszystkichUzytkownikow();
+
     finanse.logowanieUzytownika();
+
+    finanse.dodajItem();
     //finanse.wyswietlWszystkieItemy();
-    //finanse.wylogowanieZalogowanegoUzytkownika();
-    //finanse.zmianaHaslaZalogowanegoUzytkownika();
-    //finanse.dodajItem();
+    //finanse.wyswietlWszystkieDaty();
     //finanse.sortowanie();
-    //finanse.wyswietlWszystkieItemy();
     //finanse.wyswietlItemyZTegoMiesiaca();
     //finanse.wyswietlItemyZPoprzedniegoMiesiaca();
-    //finanse.obliczWydatkiZObecnegoMiesiaca();
-    //finanse.obliczWydatkiZPoprzedniegoMiesiaca();
+    //finanse.wyswietlItemyZPodanegoZakresu();
     //DataMenager dataMenager;
-    //dataMenager.wczytajDatyZPliku();
-    //dataMenager.pobierzDzisiejszaDate();
-    //dataMenager.wyswietlDaty();
-    //dataMenager.dzisiejszaData();
-    //finanse.sortowanie();
-    //finanse.wyswietlWszystkieDaty();
-    finanse.wyznaczZakresBilansu();
-
-
+    //dataMenager.dzisiejszaDataJakoInt();
 
     return 0;
 }

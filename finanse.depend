@@ -51,13 +51,13 @@
 	"User.h"
 	"Markup.h"
 
-1587045304 source:d:\programowanie\projekty c++\finanse\main.cpp
+1587133437 source:d:\programowanie\projekty c++\finanse\main.cpp
 	<iostream>
 	<vector>
 	"Markup.h"
 	"Finanse.h"
 	"DataMenager.h"
-	"IncomeMenager.h"
+	"ExpenseMenager.h"
 
 1586181576 d:\programowanie\projekty c++\finanse\markup.h
 	<stdlib.h>
@@ -65,12 +65,12 @@
 	<string>
 	<afx.h>
 
-1586953715 d:\programowanie\projekty c++\finanse\usersmenager.h
+1587125341 d:\programowanie\projekty c++\finanse\usersmenager.h
 	<iostream>
 	<vector>
 	"User.h"
 	"PlikiZUsers.h"
-	"IncomeMenager.h"
+	"ExpenseMenager.h"
 	"DataMenager.h"
 	"Markup.h"
 
@@ -110,12 +110,12 @@
 1586969218 source:d:\programowanie\projekty c++\finanse\income.cpp
 	"Income.h"
 
-1586970437 d:\programowanie\projekty c++\finanse\income.h
+1587125986 d:\programowanie\projekty c++\finanse\income.h
 	<iostream>
 	<vector>
 	<algorithm>
 
-1587048526 source:d:\programowanie\projekty c++\finanse\incomemenager.cpp
+1587124644 source:d:\programowanie\projekty c++\finanse\incomemenager.cpp
 	<iostream>
 	<vector>
 	<windows.h>
@@ -126,7 +126,7 @@
 	"DataMenager.h"
 	"Markup.h"
 
-1587046912 d:\programowanie\projekty c++\finanse\incomemenager.h
+1587124629 d:\programowanie\projekty c++\finanse\incomemenager.h
 	<iostream>
 	<vector>
 	<algorithm>
@@ -136,29 +136,29 @@
 	"Markup.h"
 	"data.h"
 
-1587045260 d:\programowanie\projekty c++\finanse\finanse.h
+1587125333 d:\programowanie\projekty c++\finanse\finanse.h
 	<iostream>
 	"UsersMenager.h"
-	"IncomeMenager.h"
+	"ExpenseMenager.h"
 	"DataMenager.h"
 
-1587045245 source:d:\programowanie\projekty c++\finanse\finanse.cpp
+1587125353 source:d:\programowanie\projekty c++\finanse\finanse.cpp
 	"Finanse.h"
 	"UsersMenager.h"
-	"IncomeMenager.h"
+	"ExpenseMenager.h"
 	"DataMenager.h"
 
-1586971627 d:\programowanie\projekty c++\finanse\plikizincomes.h
+1587126226 d:\programowanie\projekty c++\finanse\plikizincomes.h
 	<iostream>
 	<vector>
-	"Income.h"
+	"Expense.h"
 	"Markup.h"
 	"data.h"
 	"DataMenager.h"
 
-1586971748 source:d:\programowanie\projekty c++\finanse\plikizincomes.cpp
+1587126441 source:d:\programowanie\projekty c++\finanse\plikizincomes.cpp
 	"Markup.h"
-	"Income.h"
+	"Expense.h"
 	"PlikiZIncomes.h"
 	"data.h"
 	"DataMenager.h"
@@ -171,7 +171,7 @@
 	<vector>
 	<algorithm>
 
-1586971133 source:d:\programowanie\projekty c++\finanse\datamenager.cpp
+1587135814 source:d:\programowanie\projekty c++\finanse\datamenager.cpp
 	<iostream>
 	<vector>
 	<stdlib.h>
@@ -180,16 +180,45 @@
 	<winbase.h>
 	<windows.h>
 	"DataMenager.h"
-	"IncomeMenager.h"
+	"ExpenseMenager.h"
 	"data.h"
-	"Income.h"
+	"Expense.h"
 	"Markup.h"
 
-1587046123 d:\programowanie\projekty c++\finanse\datamenager.h
+1587134736 d:\programowanie\projekty c++\finanse\datamenager.h
 	<iostream>
 	<vector>
 	<sstream>
 	<algorithm>
 	"data.h"
-	"Income.h"
+	"Expense.h"
+
+1587135345 d:\programowanie\projekty c++\finanse\expensemenager.h
+	<iostream>
+	<vector>
+	<algorithm>
+	"Expense.h"
+	"PlikiZIncomes.h"
+	"DataMenager.h"
+	"Markup.h"
+	"data.h"
+
+1587136139 source:d:\programowanie\projekty c++\finanse\expensemenager.cpp
+	<iostream>
+	<vector>
+	<windows.h>
+	<winbase.h>
+	"Expense.h"
+	"data.h"
+	"ExpenseMenager.h"
+	"DataMenager.h"
+	"Markup.h"
+
+1587125985 source:d:\programowanie\projekty c++\finanse\expense.cpp
+	"Expense.h"
+
+1587126079 d:\programowanie\projekty c++\finanse\expense.h
+	<iostream>
+	<vector>
+	<algorithm>
 

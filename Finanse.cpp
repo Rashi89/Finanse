@@ -1,6 +1,6 @@
 #include "Finanse.h"
 #include "UsersMenager.h"
-#include "IncomeMenager.h"
+#include "ExpenseMenager.h"
 #include "DataMenager.h"
 
 void Finanse::rejestracjaUzytkownika()
@@ -18,7 +18,7 @@ void Finanse::logowanieUzytownika()
     usersMenager.logowanieUzytkownika();
     if(usersMenager.czyUzytkownikJestZalogowany())
     {
-        incomeMenager = new IncomeMenager(usersMenager.pobierzIdZalogowanegoUzytkownika());
+        expenseMenager = new ExpenseMenager(usersMenager.pobierzIdZalogowanegoUzytkownika());
         //dataMenager = new DataMenager(usersMenager.pobierzIdZalogowanegoUzytkownika());
 
     }
@@ -38,7 +38,7 @@ void Finanse::dodajItem()
 {
     if(usersMenager.czyUzytkownikJestZalogowany())
     {
-        incomeMenager->dodajItem();
+        expenseMenager->dodajItem();
     }
     else
     {
@@ -51,21 +51,21 @@ void Finanse::wyswietlWszystkieItemy()
 {
     if(usersMenager.czyUzytkownikJestZalogowany())
     {
-        incomeMenager->wyswietlWszystkieItemy();
+        expenseMenager->wyswietlWszystkieItemy();
     }
 }
  void Finanse::wyswietlItemyZTegoMiesiaca()
  {
      if(usersMenager.czyUzytkownikJestZalogowany())
     {
-        incomeMenager->wyswietlItemyZBiezacegoMiesiaca();
+        expenseMenager->wyswietlItemyZBiezacegoMiesiaca();
     }
  }
   void Finanse::wyswietlItemyZPoprzedniegoMiesiaca()
  {
      if(usersMenager.czyUzytkownikJestZalogowany())
     {
-        incomeMenager->wyswietlItemyZPoprzedniegoMiesiaca();
+        expenseMenager->wyswietlItemyZPoprzedniegoMiesiaca();
     }
  }
 
@@ -73,22 +73,22 @@ void Finanse::wyswietlWszystkieItemy()
  {
      if(usersMenager.czyUzytkownikJestZalogowany())
     {
-        incomeMenager->obliczWydatkiZObecnegoMiesiaca();
+        expenseMenager->obliczWydatkiZObecnegoMiesiaca();
     }
  }
  void Finanse::obliczWydatkiZPoprzedniegoMiesiaca()
  {
      if(usersMenager.czyUzytkownikJestZalogowany())
     {
-        incomeMenager->obliczWydatkiZPoprzedniegoMiesiaca();
+        expenseMenager->obliczWydatkiZPoprzedniegoMiesiaca();
     }
  }
 
-  void Finanse::wyznaczZakresBilansu()
+  void Finanse::wyswietlItemyZPodanegoZakresu()
  {
      if(usersMenager.czyUzytkownikJestZalogowany())
     {
-        incomeMenager->wyznaczZakresBilansu();
+        expenseMenager->wyswietlItemyZPodanegoZakresu();
     }
  }
 
@@ -96,13 +96,14 @@ void Finanse::wyswietlWszystkieDaty()
 {
     if(usersMenager.czyUzytkownikJestZalogowany())
     {
-        incomeMenager->wyswietlWszystkieDaty();
+        expenseMenager->wyswietlWszystkieDaty();
     }
 }
 void Finanse::sortowanie()
 {
     if(usersMenager.czyUzytkownikJestZalogowany())
     {
-        incomeMenager->sortowanie();
+        expenseMenager->sortowanie();
     }
 }
+
