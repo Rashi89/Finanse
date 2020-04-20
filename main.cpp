@@ -12,7 +12,7 @@ int main() {
 
     finanse.logowanieUzytownika();
 
-    //finanse.dodajItem();
+    finanse.dodajItem();
     //finanse.wyswietlWszystkieItemy();
     //finanse.wyswietlWszystkieDaty();
    // finanse.sortowanie();

@@ -27,19 +27,19 @@ void ExpenseMenager::dodajItem() {
         {
             expense=podajNowyItem(znak,wpisanaData);
             expenses.push_back(expense);
-            plikiZIncomes.dopiszItemDoPliku(expense);
+            plikiZExpenses.dopiszItemDoPliku(expense);
         }
         else cout<<"Zla data!"<<endl;
     }
     else if(znak=='t')
     {
-        cout<<"Dzisiejsza data: "<<endl;
+        //cout<<"Dzisiejsza data: "<<endl;
         data =dataMenager.pobierzDzisiejszaDate();
 
         string wpisanaData=data.pobierzDataZMyslnikami();
         expense=podajNowyItem(znak,wpisanaData);
         expenses.push_back(expense);
-        plikiZIncomes.dopiszItemDoPliku(expense);
+        plikiZExpenses.dopiszItemDoPliku(expense);
     }
 }
 
