@@ -12,10 +12,10 @@ int main() {
 
     finanse.logowanieUzytownika();
 
-    finanse.dodajIncome();
+    //finanse.dodajIncome();
 
     //finanse.dodajItem();
-    //finanse.wyswietlWszystkieItemy();
+    finanse.wyswietlWszystkieItemy();
     //finanse.wyswietlWszystkieDaty();
    // finanse.sortowanie();
    // finanse.wyswietlItemyZTegoMiesiaca();
