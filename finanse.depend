@@ -51,7 +51,7 @@
 	"User.h"
 	"Markup.h"
 
-1587380197 source:d:\programowanie\projekty c++\finanse\main.cpp
+1587381457 source:d:\programowanie\projekty c++\finanse\main.cpp
 	<iostream>
 	<vector>
 	"Markup.h"
@@ -116,41 +116,51 @@
 	<vector>
 	<algorithm>
 
-1587378958 source:d:\programowanie\projekty c++\finanse\incomemenager.cpp
+1587381384 source:d:\programowanie\projekty c++\finanse\incomemenager.cpp
+	<iostream>
+	<vector>
+	<windows.h>
+	<winbase.h>
+	"Income.h"
+	"data.h"
+	"IncomeMenager.h"
+	"DataMenager.h"
+	"Markup.h"
 
-1587379822 d:\programowanie\projekty c++\finanse\incomemenager.h
+1587381376 d:\programowanie\projekty c++\finanse\incomemenager.h
 	<iostream>
 	<vector>
 	<algorithm>
 	"Income.h"
 	"data.h"
 	"DataMenager.h"
+	"PlikiZIncomes.h"
 
-1587379369 d:\programowanie\projekty c++\finanse\finanse.h
+1587381436 d:\programowanie\projekty c++\finanse\finanse.h
 	<iostream>
 	"UsersMenager.h"
 	"ExpenseMenager.h"
 	"DataMenager.h"
 	"IncomeMenager.h"
 
-1587379543 source:d:\programowanie\projekty c++\finanse\finanse.cpp
+1587381443 source:d:\programowanie\projekty c++\finanse\finanse.cpp
 	"Finanse.h"
 	"UsersMenager.h"
 	"ExpenseMenager.h"
 	"DataMenager.h"
 	"IncomeMenager.h"
 
-1587378856 d:\programowanie\projekty c++\finanse\plikizincomes.h
+1587380679 d:\programowanie\projekty c++\finanse\plikizincomes.h
 	<iostream>
 	<vector>
-	"Expense.h"
+	"Income.h"
 	"Markup.h"
 	"data.h"
 	"DataMenager.h"
 
-1587378856 source:d:\programowanie\projekty c++\finanse\plikizincomes.cpp
+1587380709 source:d:\programowanie\projekty c++\finanse\plikizincomes.cpp
 	"Markup.h"
-	"Expense.h"
+	"Income.h"
 	"PlikiZIncomes.h"
 	"data.h"
 	"DataMenager.h"
@@ -197,7 +207,7 @@
 	"Markup.h"
 	"data.h"
 
-1587380084 source:d:\programowanie\projekty c++\finanse\expensemenager.cpp
+1587380264 source:d:\programowanie\projekty c++\finanse\expensemenager.cpp
 	<iostream>
 	<vector>
 	<windows.h>
@@ -216,7 +226,7 @@
 	<vector>
 	<algorithm>
 
-1587380069 d:\programowanie\projekty c++\finanse\plikizexpenses.h
+1587380421 d:\programowanie\projekty c++\finanse\plikizexpenses.h
 	<iostream>
 	<vector>
 	"Expense.h"
