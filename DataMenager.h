@@ -9,8 +9,6 @@
 #include "Expense.h"
 //#include "IncomeMenager.h"
 
-
-
 using namespace std;
 
 class DataMenager
@@ -24,29 +22,23 @@ class DataMenager
     //string zamienDateNaNapisBezMyslnikow(string wpisanaData);
     string dzisiejszaData();
 
-
+    int dzisiejszaDataJakoInt();
+    int obliczIleDniMaObecnyMiesiac();
+    int ostatniaDataWObecnymMiesiacuJakoInt();
 
 public:
     DataMenager(){
         //daty = wczytajDaty(int idZalogowanegoUzytkownika);
     }
     vector <Data> wczytajDaty(int idZalogowanegoUzytkownika);
-    bool podajDate(string wpisanaData);
-    //void sortowanie(vector <Data> &daty);
-    Data pobierzDzisiejszaDate();
     string zamienDateNaNapisBezMyslnikow(string wpisanaData);
-    int zamienDateNaRok(string wpisanaData);
-    int zamienDateNaDzien(string wpisanaData);
-    int zamienDateNaMiesiac(string wpisanaData);
-    bool czyDataJestPoprawna(int rok, int miesiac, int dzien);
-    int dzisiejszaDataJakoInt();
-    int obliczIleDniMaObecnyMiesiac();
-    int ostatniaDataWObecnymMiesiacuJakoInt();
     bool czyDataJestZPrzedzialu(string wpisanaData);
-
-
-
-
+    Data pobierzDzisiejszaDate();
+    bool podajDate(string wpisanaData);
+    int zamienDateNaRok(string wpisanaData);
+    int zamienDateNaMiesiac(string wpisanaData);
+    int zamienDateNaDzien(string wpisanaData);
+    bool czyDataJestPoprawna(int rok, int miesiac, int dzien);
 
 };
 #endif

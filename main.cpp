@@ -12,11 +12,11 @@ int main() {
 
     finanse.logowanieUzytownika();
 
-    finanse.dodajItem();
+    //finanse.dodajItem();
     //finanse.wyswietlWszystkieItemy();
     //finanse.wyswietlWszystkieDaty();
-    //finanse.sortowanie();
-    //finanse.wyswietlItemyZTegoMiesiaca();
+   // finanse.sortowanie();
+   // finanse.wyswietlItemyZTegoMiesiaca();
     //finanse.wyswietlItemyZPoprzedniegoMiesiaca();
     //finanse.wyswietlItemyZPodanegoZakresu();
     //DataMenager dataMenager;

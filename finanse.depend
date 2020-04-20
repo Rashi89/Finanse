@@ -51,7 +51,7 @@
 	"User.h"
 	"Markup.h"
 
-1587133437 source:d:\programowanie\projekty c++\finanse\main.cpp
+1587136614 source:d:\programowanie\projekty c++\finanse\main.cpp
 	<iostream>
 	<vector>
 	"Markup.h"
@@ -107,8 +107,7 @@
 	"Markup.h"
 	"PlikiZUsers.h"
 
-1586969218 source:d:\programowanie\projekty c++\finanse\income.cpp
-	"Income.h"
+1587378088 source:d:\programowanie\projekty c++\finanse\income.cpp
 
 1587125986 d:\programowanie\projekty c++\finanse\income.h
 	<iostream>
@@ -171,7 +170,7 @@
 	<vector>
 	<algorithm>
 
-1587135814 source:d:\programowanie\projekty c++\finanse\datamenager.cpp
+1587136170 source:d:\programowanie\projekty c++\finanse\datamenager.cpp
 	<iostream>
 	<vector>
 	<stdlib.h>
@@ -185,7 +184,7 @@
 	"Expense.h"
 	"Markup.h"
 
-1587134736 d:\programowanie\projekty c++\finanse\datamenager.h
+1587136708 d:\programowanie\projekty c++\finanse\datamenager.h
 	<iostream>
 	<vector>
 	<sstream>
@@ -214,7 +213,7 @@
 	"DataMenager.h"
 	"Markup.h"
 
-1587125985 source:d:\programowanie\projekty c++\finanse\expense.cpp
+1587378430 source:d:\programowanie\projekty c++\finanse\expense.cpp
 	"Expense.h"
 
 1587126079 d:\programowanie\projekty c++\finanse\expense.h
