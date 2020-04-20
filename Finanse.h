@@ -1,24 +1,30 @@
 #include <iostream>
 
 #include "UsersMenager.h"
-#include "IncomeMenager.h"
+#include "ExpenseMenager.h"
+#include "DataMenager.h"
 
 using namespace std;
 
 class Finanse
 {
     UsersMenager usersMenager;
-    IncomeMenager *incomeMenager;
+    ExpenseMenager *expenseMenager;
+    //DataMenager *dataMenager;
 
 public:
     Finanse()
     {
-        incomeMenager=NULL;
+        expenseMenager=NULL;
+        //dataMenager=NULL;
     }
     ~Finanse()
     {
-        delete incomeMenager;
-        incomeMenager=NULL;
+        delete expenseMenager;
+        expenseMenager=NULL;
+        //delete dataMenager;
+        //dataMenager=NULL;
+
     }
     void rejestracjaUzytkownika();
     void wyswietlWszystkichUzytkownikow();
@@ -27,4 +33,11 @@ public:
     void zmianaHaslaZalogowanegoUzytkownika();
     void dodajItem();
     void wyswietlWszystkieItemy();
+    void wyswietlWszystkieDaty();
+    void wyswietlItemyZTegoMiesiaca();
+    void wyswietlItemyZPoprzedniegoMiesiaca();
+    void obliczWydatkiZObecnegoMiesiaca();
+    void obliczWydatkiZPoprzedniegoMiesiaca();
+    void wyswietlItemyZPodanegoZakresu();
+    void sortowanie();
 };

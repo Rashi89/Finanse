@@ -3,15 +3,20 @@
 #include <iostream>
 #include <vector>
 //
-#include "Income.h"
+#include "Expense.h"
 #include "Markup.h"
+#include "data.h"
+#include "DataMenager.h"
 
 using namespace std;
 
 class PlikiZIncomes
 {
+    DataMenager dataMenager;
+    int konwersjaStringNaInt(string liczba);
 public:
-    vector <Income> wczytajItemyZPliku(int idZalogowanegoUzytkownika);
-    void dopiszItemDoPliku(Income income);
+    vector <Expense> wczytajItemyZPliku(int idZalogowanegoUzytkownika);
+    vector <Data> wczytajDatyZPliku(int idZalogowanegoUzytkownika);
+    void dopiszItemDoPliku(Expense expense);
 };
 #endif

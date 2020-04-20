@@ -1,6 +1,7 @@
 #include "Finanse.h"
 #include "UsersMenager.h"
-#include "IncomeMenager.h"
+#include "ExpenseMenager.h"
+#include "DataMenager.h"
 
 void Finanse::rejestracjaUzytkownika()
 {
@@ -17,7 +18,9 @@ void Finanse::logowanieUzytownika()
     usersMenager.logowanieUzytkownika();
     if(usersMenager.czyUzytkownikJestZalogowany())
     {
-        incomeMenager = new IncomeMenager(usersMenager.pobierzIdZalogowanegoUzytkownika());
+        expenseMenager = new ExpenseMenager(usersMenager.pobierzIdZalogowanegoUzytkownika());
+        //dataMenager = new DataMenager(usersMenager.pobierzIdZalogowanegoUzytkownika());
+
     }
 }
 
@@ -35,7 +38,7 @@ void Finanse::dodajItem()
 {
     if(usersMenager.czyUzytkownikJestZalogowany())
     {
-        incomeMenager->dodajItem();
+        expenseMenager->dodajItem();
     }
     else
     {
@@ -48,6 +51,59 @@ void Finanse::wyswietlWszystkieItemy()
 {
     if(usersMenager.czyUzytkownikJestZalogowany())
     {
-        incomeMenager->wyswietlWszystkieItemy();
+        expenseMenager->wyswietlWszystkieItemy();
     }
 }
+ void Finanse::wyswietlItemyZTegoMiesiaca()
+ {
+     if(usersMenager.czyUzytkownikJestZalogowany())
+    {
+        expenseMenager->wyswietlItemyZBiezacegoMiesiaca();
+    }
+ }
+  void Finanse::wyswietlItemyZPoprzedniegoMiesiaca()
+ {
+     if(usersMenager.czyUzytkownikJestZalogowany())
+    {
+        expenseMenager->wyswietlItemyZPoprzedniegoMiesiaca();
+    }
+ }
+
+ void Finanse::obliczWydatkiZObecnegoMiesiaca()
+ {
+     if(usersMenager.czyUzytkownikJestZalogowany())
+    {
+        expenseMenager->obliczWydatkiZObecnegoMiesiaca();
+    }
+ }
+ void Finanse::obliczWydatkiZPoprzedniegoMiesiaca()
+ {
+     if(usersMenager.czyUzytkownikJestZalogowany())
+    {
+        expenseMenager->obliczWydatkiZPoprzedniegoMiesiaca();
+    }
+ }
+
+  void Finanse::wyswietlItemyZPodanegoZakresu()
+ {
+     if(usersMenager.czyUzytkownikJestZalogowany())
+    {
+        expenseMenager->wyswietlItemyZPodanegoZakresu();
+    }
+ }
+
+void Finanse::wyswietlWszystkieDaty()
+{
+    if(usersMenager.czyUzytkownikJestZalogowany())
+    {
+        expenseMenager->wyswietlWszystkieDaty();
+    }
+}
+void Finanse::sortowanie()
+{
+    if(usersMenager.czyUzytkownikJestZalogowany())
+    {
+        expenseMenager->sortowanie();
+    }
+}
+

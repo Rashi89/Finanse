@@ -18,6 +18,15 @@ void Income::ustawAmount(int newAmount) {
     if(newAmount>=0)
     amount=newAmount;
 }
+void Income::ustawDataJakoInt(int newDataJakoInt)
+{
+    dataJakoInt=newDataJakoInt;
+}
+
+    bool Income::operator<(const Income &other)
+{
+    return dataJakoInt < other.dataJakoInt;
+}
 
 
 int Income::pobierzIncomeID() {
@@ -34,4 +43,8 @@ string Income::pobierzItem() {
 }
 int Income::pobierzAmount() {
     return amount;
+}
+
+int Income::pobierzDataJakoInt() {
+    return dataJakoInt;
 }
