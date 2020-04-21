@@ -5,7 +5,7 @@
 #include <algorithm>
 
 #include "Expense.h"
-#include "PlikiZIncomes.h"
+#include "PlikiZExpenses.h"
 #include "DataMenager.h"
 #include "Markup.h"
 #include "data.h"
@@ -18,7 +18,7 @@ class ExpenseMenager //:public DataMenager
 
     vector <Expense> expenses;
     vector <Data> daty;
-    PlikiZIncomes plikiZIncomes;
+    PlikiZExpenses plikiZExpenses;
     DataMenager dataMenager;
 
     Expense podajNowyItem(char znak, string wpisanaData);
@@ -35,7 +35,7 @@ class ExpenseMenager //:public DataMenager
 
 public:
     ExpenseMenager(int idZalogowanegoUzytkownika): ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika){
-        expenses = plikiZIncomes.wczytajItemyZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+        expenses = plikiZExpenses.wczytajItemyZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
         daty = dataMenager.wczytajDaty(ID_ZALOGOWANEGO_UZYTKOWNIKA);
         };
     void dodajItem();
@@ -44,13 +44,16 @@ public:
     void wyswietlItemyZBiezacegoMiesiaca();
     void wyswietlItemyZPoprzedniegoMiesiaca();
     void sortowanie();
-    int obliczWydatkiZObecnegoMiesiaca();
-    int obliczWydatkiZPoprzedniegoMiesiaca();
-    void wyswietlItemyZPodanegoZakresu();
-    int obliczWydatkiZPodanegoOkresu(int dataPoczatkowaJakoInt,int dataKoncowaJakoInt);
+    float obliczWydatkiZObecnegoMiesiaca();
+    float obliczWydatkiZPoprzedniegoMiesiaca();
+    void wyswietlItemyZPodanegoZakresu(string dataPoczatkowa,string dataKoncowa);
+    float obliczWydatkiZPodanegoOkresu(string dataPoczatkowa,string dataKoncowa);
 
 
     string wczytajLinie();
+    float zamianaStringNaFloat(string liczba);
+    string zamienKropkeNaPrzecinek(string liczba);
+
 
 };
 

@@ -12,11 +12,16 @@ int main() {
 
     finanse.logowanieUzytownika();
 
+    //finanse.dodajIncome();
+
     //finanse.dodajItem();
     //finanse.wyswietlWszystkieItemy();
     //finanse.wyswietlWszystkieDaty();
-   // finanse.sortowanie();
-   // finanse.wyswietlItemyZTegoMiesiaca();
+    finanse.sortowanie();
+    finanse.wyswietlWszystkieItemy();
+    //finanse.wyswietlItemyZTegoMiesiaca();
+    //finanse.obliczWydatkiZObecnegoMiesiaca();
+    //finanse.obliczWydatkiZPoprzedniegoMiesiaca();
     //finanse.wyswietlItemyZPoprzedniegoMiesiaca();
     //finanse.wyswietlItemyZPodanegoZakresu();
     //DataMenager dataMenager;

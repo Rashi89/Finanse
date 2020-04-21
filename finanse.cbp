@@ -34,6 +34,10 @@
 		</Compiler>
 		<Unit filename="DataMenager.cpp" />
 		<Unit filename="DataMenager.h" />
+		<Unit filename="Expense.cpp" />
+		<Unit filename="Expense.h" />
+		<Unit filename="ExpenseMenager.cpp" />
+		<Unit filename="ExpenseMenager.h" />
 		<Unit filename="Finanse.cpp" />
 		<Unit filename="Finanse.h" />
 		<Unit filename="Income.cpp" />
@@ -42,6 +46,8 @@
 		<Unit filename="IncomeMenager.h" />
 		<Unit filename="Markup.cpp" />
 		<Unit filename="Markup.h" />
+		<Unit filename="PlikiZExpenses.cpp" />
+		<Unit filename="PlikiZExpenses.h" />
 		<Unit filename="PlikiZIncomes.cpp" />
 		<Unit filename="PlikiZIncomes.h" />
 		<Unit filename="PlikiZUsers.cpp" />
