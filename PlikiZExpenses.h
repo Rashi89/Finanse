@@ -11,12 +11,6 @@
 #include "DataMenager.h"
 #include "AdditionalMethods.h"
 
-//#include "Expense.h"
-//#include "data.h"
-//#include "DataMenager.h"
-//#include "MetodyPomocnicze.h"
-//#include "Markup.h"
-
 using namespace std;
 
 class PlikiZExpenses

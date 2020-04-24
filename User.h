@@ -2,9 +2,7 @@
 #define USER_H
 #include <iostream>
 
-
 using namespace std;
-
 
 class User {
     int ID;

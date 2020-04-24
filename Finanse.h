@@ -35,14 +35,11 @@ public:
         dataMenager=NULL;
     }
     void registerUser();
-    //void wyswietlWszystkichUzytkownikow();
     void loginUser();
     void logoutUser();
     void changePasswordLoggedUser();
     void addExpense();
     void addIncome();
-    //void wyswietlWszystkieItemy();
-    //void wyswietlWszystkieDaty();
     void showItemsFromThisMonth();
     void showItemsFromPreviousMonth();
     void showItemsFromRangeProvided();

@@ -6,7 +6,6 @@
 #include <algorithm>
 #include <sstream>
 
-//#include "IncomeMenager.h"
 
 using namespace std;
 

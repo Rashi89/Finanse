@@ -246,8 +246,8 @@ vector <Data> DataMenager::loadData(int idLoggedUser)
 
     CMarkup xml;
     xml.Load( "Expense.xml" );
-    xml.FindElem("EXPENSES"); // root ORDER element
-    xml.IntoElem(); // inside ORDER
+    xml.FindElem("EXPENSES");
+    xml.IntoElem();
     while ( xml.FindElem("EXPENSE") ) {
         xml.IntoElem();
         xml.FindElem( "USERID" );

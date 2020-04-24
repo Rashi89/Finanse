@@ -105,28 +105,12 @@ Income IncomeMenager::getNewItemData(char sign, string givenData) {
         return income;
 }
 
-/*void IncomeMenager::wyswietlWszystkieIncome()
-{
-    if (!incomes.empty()) {
-        cout << "             >>>PRZYCHODY<<<" << endl;
-        cout << "-----------------------------------------------" << endl;
-        for (vector <Income> :: iterator itr = incomes.begin(); itr != incomes.end(); itr++) {
-            showIncome(*itr);
-        }
-        cout << endl;
-    } else {
-        cout << endl << "Brak produktow." << endl << endl;
-    }
-}*/
 void IncomeMenager::showIncome(Income income)
 {
-    //cout<<"ID uzytkownika: "<< income.getUserID()<<endl;
     cout<<"ID itemu: "<< income.getIncomeID()<<endl;
     cout<<"Data: "<< income.getDate()<<endl;
     cout<<"Nazwa itemu: "<< income.getItem()<<endl;
     cout<<"Koszt: "<< income.getAmount()<<endl;
-    //cout<<"Data jako int: "<<income.getDateAsInt()<<endl;
-    //cout<<"Income jako string: "<<income.getAmountAsString()<<endl;
 }
 
 void IncomeMenager::showItemsFromThisMonth()
@@ -149,7 +133,6 @@ void IncomeMenager::showIncomeFromThisMonth(Income income)
     int day=income.getDateAsInt()%100;
     int month=(income.getDateAsInt()%10000-day)/100;
     if(month==thisMonth){
-    //cout<<"ID uzytkownika: "<< income.getUserID()<<endl;
     cout<<"ID itemu: "<< income.getIncomeID()<<endl;
     cout<<"Data: "<< income.getDate()<<endl;
     cout<<"Nazwa itemu: "<< income.getItem()<<endl;
@@ -199,7 +182,6 @@ void IncomeMenager::showIncomeFromPreviousMonth(Income income)
     int day=income.getDateAsInt()%100;
     int month=(income.getDateAsInt()%10000-day)/100;
     if(month==previousMonth){
-    //cout<<"ID uzytkownika: "<< income.getUserID()<<endl;
     cout<<"ID itemu: "<< income.getIncomeID()<<endl;
     cout<<"Data: "<< income.getDate()<<endl;
     cout<<"Nazwa itemu: "<< income.getItem()<<endl;
@@ -294,7 +276,6 @@ void IncomeMenager::showIncomeFromRangeProvided(string startingData,string endDa
         for (vector <Income> :: iterator itr = incomes.begin(); itr != incomes.end(); itr++) {
             if(startingDataIsInt<=itr->getDateAsInt()&&itr->getDateAsInt()<=endDateIsInt)
             {
-                //cout<<"ID uzytkownika: "<< itr->pobierzUserID()<<endl;
                 cout<<"ID itemu: "<< itr->getIncomeID()<<endl;
                 cout<<"Data: "<< itr->getDate()<<endl;
                 cout<<"Nazwa itemu: "<< itr->getItem()<<endl;

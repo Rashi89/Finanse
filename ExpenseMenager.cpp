@@ -127,37 +127,6 @@ void ExpenseMenager::wyswietlWszystkieItemy()
     }
 }
 
-/*void ExpenseMenager::wyswietlWszystkieDaty()
-{
-    if (!daty.empty()) {
-        cout << "             >>> DATY <<<" << endl;
-        cout << "-----------------------------------------------" << endl;
-        cout<<daty.size()<<endl;
-        for (vector <Data> :: iterator itr = daty.begin(); itr != daty.end(); itr++) {
-            wyswietlDate(*itr);
-        }
-        cout << endl;
-    } else {
-        cout << endl << "Brak dat." << endl << endl;
-    }
-}
-
-void ExpenseMenager::wyswietlDate(Data data) {
-    if(data.pobierzMiesiac()<10&&data.pobierzDzien()<10) {
-        cout<<"Nr daty "<<data.pobierzID()<<": "<<data.pobierzRok()<<"-0"<<data.pobierzMiesiac()<<"-0"<<data.pobierzDzien();
-        cout<<" data jako napis: "<<data.pobierzDataZMyslnikami()<<" data jako liczba: "<<data.pobierzDateBezMyslnikow()<<endl;
-    } else if(data.pobierzMiesiac()<10) {
-        cout<<"Nr daty "<<data.pobierzID()<<": "<<data.pobierzRok()<<"-0"<<data.pobierzMiesiac()<<"-"<<data.pobierzDzien();
-        cout<<" data jako napis: "<<data.pobierzDataZMyslnikami()<<" data jako liczba: "<<data.pobierzDateBezMyslnikow()<<endl;
-    } else if(data.pobierzDzien()<10) {
-        cout<<"Nr daty "<<data.pobierzID()<<": "<<data.pobierzRok()<<"-"<<data.pobierzMiesiac()<<"-0"<<data.pobierzDzien();
-        cout<<" data jako napis: "<<data.pobierzDataZMyslnikami()<<" data jako liczba: "<<data.pobierzDateBezMyslnikow()<<endl;
-    } else{
-        cout<<"Nr daty "<<data.pobierzID()<<": "<<data.pobierzRok()<<"-"<<data.pobierzMiesiac()<<"-"<<data.pobierzDzien();
-        cout<<" data jako napis: "<<data.pobierzDataZMyslnikami()<<" data jako liczba: "<<data.pobierzDateBezMyslnikow()<<endl;
-    }
-}*/
-
 void ExpenseMenager::sorting()
 {
     sortingExpense(expenses);
@@ -170,12 +139,10 @@ void ExpenseMenager::sortingExpense(vector <Expense> &expenses)
 
 void ExpenseMenager::showExpense(Expense expense)
 {
-    //cout<<"ID uzytkownika: "<< expense.pobierzUserID()<<endl;
     cout<<"ID itemu: "<< expense.getExpenseID()<<endl;
     cout<<"Data: "<< expense.getDate()<<endl;
     cout<<"Nazwa itemu: "<< expense.getItem()<<endl;
     cout<<"Koszt: "<< expense.getAmount()<<endl;
-    //cout<<"Data jako int: "<<expense.getDateAsInt()<<endl;
 }
 
 void ExpenseMenager::showItemsFromThisMonth()
@@ -198,7 +165,6 @@ void ExpenseMenager::showExpenseFromThisMonth(Expense expense)
     int day=expense.getDateAsInt()%100;
     int month=(expense.getDateAsInt()%10000-day)/100;
     if(month==thisMonth){
-    //cout<<"ID uzytkownika: "<< expense.pobierzUserID()<<endl;
     cout<<"ID itemu: "<< expense.getExpenseID()<<endl;
     cout<<"Data: "<< expense.getDate()<<endl;
     cout<<"Nazwa itemu: "<< expense.getItem()<<endl;

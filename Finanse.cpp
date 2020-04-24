@@ -5,11 +5,6 @@ void Finanse::registerUser()
     usersMenager.registerUser();
 }
 
-/*void Finanse::wyswietlWszystkichUzytkownikow()
-{
-    usersMenager.wyswietlWszystkichUzytkownikow();
-}*/
-
 void Finanse::loginUser()
 {
     usersMenager.loginUser();
@@ -44,14 +39,6 @@ void Finanse::addExpense()
     }
 }
 
-/*void Finanse::wyswietlWszystkieItemy()
-{
-    if(usersMenager.isUserLoggedIn())
-    {
-        expenseMenager->wyswietlWszystkieItemy();
-        incomeMenager->wyswietlWszystkieIncome();
-    }
-}*/
  void Finanse::showItemsFromThisMonth()
  {
      if(usersMenager.isUserLoggedIn())
@@ -120,14 +107,6 @@ void Finanse::addExpense()
         cout<<"Bilans z wybranego okresu: "<<bilans<<endl;
     }
  }
-
-/*void Finanse::wyswietlWszystkieDaty()
-{
-    if(usersMenager.isUserLoggedIn())
-    {
-        expenseMenager->wyswietlWszystkieDaty();
-    }
-}*/
 
 void Finanse::sorting()
 {

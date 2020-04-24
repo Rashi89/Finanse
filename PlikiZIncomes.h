@@ -2,18 +2,12 @@
 #define PLIKIZINCOMES_H
 #include <iostream>
 #include <vector>
-//
+
 #include "Income.h"
 #include "Markup.h"
 #include "data.h"
 #include "DataMenager.h"
 #include "AdditionalMethods.h"
-
-//#include "Markup.h"
-//#include "Income.h"
-//#include "data.h"
-//#include "DataMenager.h"
-//#include "MetodyPomocnicze.h"
 
 using namespace std;
 

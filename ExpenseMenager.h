@@ -13,11 +13,6 @@
 #include "data.h"
 #include "AdditionalMethods.h"
 
-//#include "data.h"
-//#include "ExpenseMenager.h"
-//#include "DataMenager.h"
-//#include "Markup.h"
-
 using namespace std;
 
 class ExpenseMenager
@@ -54,7 +49,6 @@ public:
     float calculateExpensesFromPreviousMonth();
     void showItemsFromRangeProvided(string dataPoczatkowa,string dataKoncowa);
     float calculateExpensesFromRangeProvided(string dataPoczatkowa,string dataKoncowa);
-
 };
 
 #endif

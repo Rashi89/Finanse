@@ -9,13 +9,6 @@
 #include "Expense.h"
 #include "Income.h"
 #include "AdditionalMethods.h"
-//#include "IncomeMenager.h"
-
-//#include "ExpenseMenager.h"
-//#include "IncomeMenager.h"
-//#include "PlikiZIncomes.h"
-//#include "data.h"
-//#include "Expense.h"
 #include "Markup.h"
 
 using namespace std;
@@ -29,7 +22,6 @@ class DataMenager
     int todayDataAsInt();
     int calculateDaysCurrentMonth();
     int lastDateInCurrentMonthAsInt();
-
 
 public:
     DataMenager(){};
@@ -45,7 +37,5 @@ public:
     int thisMonth();
     bool isDateFormat(string givenDate);
     bool isCorrectDate(string date);
-
-
 };
 #endif

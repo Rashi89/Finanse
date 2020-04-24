@@ -12,13 +12,6 @@
 #include "PlikiZIncomes.h"
 #include "AdditionalMethods.h"
 
-
-//#include "data.h"
-//#include "Income.h"
-//#include "DataMenager.h"
-//#include "Markup.h"
-//#include "MetodyPomocnicze.h"
-
 using namespace std;
 
 class IncomeMenager{
@@ -42,9 +35,7 @@ public:
         incomes= plikiZIncomes.loadIncomesFromFile(ID_LOGGED_USER);
         daty = dataMenager.loadData(ID_LOGGED_USER);
         };
-
     void addIncome();
-    //void wyswietlWszystkieIncome();
     void showItemsFromThisMonth();
     void showItemsFromPreviousMonth();
     void showItemsFromRangeProvided(string startingDate, string endDate);
@@ -53,6 +44,5 @@ public:
     float calculateIncomesFromRangeProvided(string startingDate,string endDate);
     bool isCorrectDate(string date);
     void sorting();
-
 };
 #endif
