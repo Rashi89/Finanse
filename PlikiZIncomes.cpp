@@ -1,11 +1,6 @@
-#include "Markup.h"
-#include "Income.h"
 #include "PlikiZIncomes.h"
-#include "data.h"
-#include "DataMenager.h"
 
-
-vector <Income> PlikiZIncomes::wczytajItemyZPliku(int idZalogowanegoUzytkownika)
+vector <Income> PlikiZIncomes::loadIncomesFromFile(int idZalogowanegoUzytkownika)
 {
     vector <Income> incomes;
     Income income;
@@ -14,7 +9,7 @@ vector <Income> PlikiZIncomes::wczytajItemyZPliku(int idZalogowanegoUzytkownika)
     int dataJakoInt;
 
     CMarkup xml;
-    xml.Load( NAZWA_PLIKU_Z_INCOMES );
+    xml.Load( NAME_FILE_INCOMES );
     xml.FindElem("INCOMES"); // root ORDER element
     xml.IntoElem(); // inside ORDER
     while ( xml.FindElem("INCOME") ) {
@@ -22,24 +17,24 @@ vector <Income> PlikiZIncomes::wczytajItemyZPliku(int idZalogowanegoUzytkownika)
         xml.FindElem( "USERID" );
         int nUserID =atoi( MCD_2PCSZ(xml.GetData()) );
         if(nUserID==idZalogowanegoUzytkownika){
-        income.ustawUserID(nUserID);
+        income.setUserID(nUserID);
         xml.FindElem( "INCOMEID" );
         int nIncomeID =atoi( MCD_2PCSZ(xml.GetData()) );
-        income.ustawIncomeID(nIncomeID);
+        income.setIncomeID(nIncomeID);
         xml.FindElem("DATE");
         MCD_STR strDate = xml.GetData();
-        income.ustawDate(strDate);
-        dataJakoString=dataMenager.zamienDateNaNapisBezMyslnikow(strDate);
-        dataJakoInt=konwersjaStringNaInt(dataJakoString);
-        income.ustawDataJakoInt(dataJakoInt);
+        income.setDate(strDate);
+        dataJakoString=dataMenager.swapDateWithStringWithoutDash(strDate);
+        dataJakoInt=AdditionalMethods::swapStringForInt(dataJakoString);
+        income.setDateAsInt(dataJakoInt);
         xml.FindElem("ITEM");
         MCD_STR strItem = xml.GetData();
-        income.ustawItem(strItem);
+        income.setItem(strItem);
         xml.FindElem( "AMOUNT" );
         MCD_STR strAmount = xml.GetData();
-        income.ustawAmountJakoString(strAmount);
-        float amountJakoFloat = zamianaStringNaFloat(strAmount);
-        income.ustawAmount(amountJakoFloat);
+        income.setAmountAsString(strAmount);
+        float amountJakoFloat = AdditionalMethods::swapStringForFloat(strAmount);
+        income.setAmount(amountJakoFloat);
         xml.OutOfElem();
         incomes.push_back(income);
         }
@@ -48,78 +43,33 @@ vector <Income> PlikiZIncomes::wczytajItemyZPliku(int idZalogowanegoUzytkownika)
     return incomes;
 }
 
-void PlikiZIncomes::dopiszItemDoPliku(Income income)
+void PlikiZIncomes::appendIncomeToFile(Income income)
 {
     CMarkup xml;
-    if(xml.Load( NAZWA_PLIKU_Z_INCOMES )==false) {
+    if(xml.Load( NAME_FILE_INCOMES )==false) {
         xml.AddElem( "INCOMES" );
         xml.IntoElem();
         xml.AddElem( "INCOME" );
         xml.IntoElem();
-        xml.AddElem( "USERID", income.pobierzUserID() );
-        xml.AddElem( "INCOMEID", income.pobierzIncomeID() );
-        xml.AddElem( "DATE", income.pobierzDate() );
-        xml.AddElem( "ITEM", income.pobierzItem() );
-        xml.AddElem( "AMOUNT", income.pobierzAmountJakoString() );
+        xml.AddElem( "USERID", income.getUserID() );
+        xml.AddElem( "INCOMEID", income.getIncomeID() );
+        xml.AddElem( "DATE", income.getDate() );
+        xml.AddElem( "ITEM", income.getItem() );
+        xml.AddElem( "AMOUNT", income.getAmountAsString() );
 
         xml.OutOfElem();
-        xml.Save( NAZWA_PLIKU_Z_INCOMES );
+        xml.Save( NAME_FILE_INCOMES );
     } else {
         xml.FindElem();
         xml.IntoElem();
         xml.AddElem( "INCOME" );
         xml.IntoElem();
-        xml.AddElem( "USERID", income.pobierzUserID() );
-        xml.AddElem( "INCOMEID", income.pobierzIncomeID() );
-        xml.AddElem( "DATE", income.pobierzDate() );
-        xml.AddElem( "ITEM", income.pobierzItem() );
-        xml.AddElem( "AMOUNT", income.pobierzAmountJakoString() );
+        xml.AddElem( "USERID", income.getUserID() );
+        xml.AddElem( "INCOMEID", income.getIncomeID() );
+        xml.AddElem( "DATE", income.getDate() );
+        xml.AddElem( "ITEM", income.getItem() );
+        xml.AddElem( "AMOUNT", income.getAmountAsString() );
         xml.OutOfElem();
-        xml.Save( NAZWA_PLIKU_Z_INCOMES );
+        xml.Save( NAME_FILE_INCOMES );
     }
-}
-
-int PlikiZIncomes::konwersjaStringNaInt(string liczba)
-{
-    int liczbaInt;
-    istringstream iss(liczba);
-    iss >> liczbaInt;
-    return liczbaInt;
-}
-float PlikiZIncomes::zamianaStringNaFloat(string liczba)
-{
-    string calosc="",ulamek="";
-    int pozycjaPrzecinka=0;
-    for(int i=0;i<liczba.length();i++)
-    {
-        if(liczba[i]!=','&&liczba[i]!='.')
-        {
-            calosc+=liczba[i];
-            pozycjaPrzecinka+=1;
-        }
-        else if(liczba[i]==',')
-        {
-            i=liczba.length()-1;
-        }
-        else if(liczba[i]=='.')
-        {
-             i=liczba.length()-1;
-        }
-    }
-    for(int i = pozycjaPrzecinka+1;i<liczba.length();i++)
-    {
-        ulamek+=liczba[i];
-    }
-
-    int caloscLiczby = konwersjaStringNaInt(calosc);
-    float ulamkowaLiczby = konwersjaStringNaInt(ulamek);
-    float wpisanaLiczbaJakoFloat;
-    if(ulamek[0]=='0'){
-    wpisanaLiczbaJakoFloat = caloscLiczby+ulamkowaLiczby/100;
-    }
-    else
-    {
-        wpisanaLiczbaJakoFloat = caloscLiczby+ulamkowaLiczby/100;
-    }
-    return wpisanaLiczbaJakoFloat;
 }
