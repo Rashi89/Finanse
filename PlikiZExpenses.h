@@ -9,17 +9,24 @@
 #include "Markup.h"
 #include "data.h"
 #include "DataMenager.h"
+#include "AdditionalMethods.h"
+
+//#include "Expense.h"
+//#include "data.h"
+//#include "DataMenager.h"
+//#include "MetodyPomocnicze.h"
+//#include "Markup.h"
 
 using namespace std;
 
 class PlikiZExpenses
 {
+    const string NAME_FILE_EXPENSES;
     DataMenager dataMenager;
-    int konwersjaStringNaInt(string liczba);
 public:
-    vector <Expense> wczytajItemyZPliku(int idZalogowanegoUzytkownika);
+    PlikiZExpenses(string nameFileExpenses): NAME_FILE_EXPENSES(nameFileExpenses){};
+    vector <Expense> loadExpensesFromFile(int idZalogowanegoUzytkownika);
     vector <Data> wczytajDatyZPliku(int idZalogowanegoUzytkownika);
-    void dopiszItemDoPliku(Expense expense);
-    float zamianaStringNaFloat(string liczba);
+    void appendExpenseToFile(Expense expense);
 };
 #endif

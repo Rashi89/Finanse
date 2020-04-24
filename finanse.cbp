@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="AdditionalMethods.cpp" />
+		<Unit filename="AdditionalMethods.h" />
 		<Unit filename="DataMenager.cpp" />
 		<Unit filename="DataMenager.h" />
 		<Unit filename="Expense.cpp" />

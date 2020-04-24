@@ -7,17 +7,25 @@
 #include "Markup.h"
 #include "data.h"
 #include "DataMenager.h"
+#include "AdditionalMethods.h"
+
+//#include "Markup.h"
+//#include "Income.h"
+//#include "data.h"
+//#include "DataMenager.h"
+//#include "MetodyPomocnicze.h"
 
 using namespace std;
 
 class PlikiZIncomes
 {
+    const string NAME_FILE_INCOMES;
     DataMenager dataMenager;
-    int konwersjaStringNaInt(string liczba);
+
 public:
-    vector <Income> wczytajItemyZPliku(int idZalogowanegoUzytkownika);
-    vector <Data> wczytajDatyZPliku(int idZalogowanegoUzytkownika);
-    void dopiszItemDoPliku(Income income);
-    float zamianaStringNaFloat(string liczba);
+    PlikiZIncomes(string nameFileIncomes): NAME_FILE_INCOMES(nameFileIncomes){};
+    vector <Income> loadIncomesFromFile(int idLoggedUser);
+    vector <Data> wczytajDatyZPliku(int idLoggedUser);
+    void appendIncomeToFile(Income income);
 };
 #endif
